@@ -1,5 +1,5 @@
 <template>
-  <div class="app-small-header flex--row">
+  <div class="app-small-header flex--row row--middle--center">
     <header-author />
   </div>
 </template>
@@ -15,5 +15,6 @@ export default {
 <style lang="scss" scoped>
 .app-small-header {
   width: 100%;
+  border: 1px solid $dark-one;
 }
 </style>
