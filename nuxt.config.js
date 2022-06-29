@@ -44,6 +44,7 @@ export default {
       '@/assets/styles/sass/_colors.scss',
       '@/assets/styles/sass/_animations.scss',
       '@/assets/styles/sass/_variables.scss',
+      '@/assets/styles/sass/_mixins.scss',
     ],
   },
   // Modules: https://go.nuxtjs.dev/config-modules

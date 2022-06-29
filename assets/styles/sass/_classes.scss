@@ -6,6 +6,7 @@
   cursor: pointer;
   transition: 0.1s ease;
   font-family: $roboto-slab;
+  font-weight: 500;
   &:hover {
     box-shadow: 3px 3px 0 0 $dark-one;
   }
