@@ -5,7 +5,7 @@
         <img src="@/assets/img/logo.svg" alt="iksirsi Logo" />
       </div>
       <div class="app-header__buttons flex--row row--middle--center">
-        <button>Listem</button>
+        <button class="btn-border">Listem</button>
       </div>
     </div>
   </header>

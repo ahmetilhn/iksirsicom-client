@@ -1,0 +1,12 @@
+.btn-border {
+  padding: 10px 20px;
+  background-color: $white;
+  color: $dark-one;
+  border: 2px solid $dark-one;
+  cursor: pointer;
+  transition: 0.1s ease;
+  font-family: $roboto-slab;
+  &:hover {
+    box-shadow: 3px 3px 0 0 $dark-one;
+  }
+}
