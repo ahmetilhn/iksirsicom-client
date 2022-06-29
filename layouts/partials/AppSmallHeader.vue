@@ -19,5 +19,8 @@ export default {
   padding: 10px 0;
   background-color: $primary-color;
   color: $dark-one;
+  position: sticky;
+  top: 0;
+  z-index: 22;
 }
 </style>
