@@ -5,7 +5,6 @@
 </template>
 <style lang="scss" scoped>
 .author {
-  font-size: 18px;
   font-weight: normal;
 }
 </style>

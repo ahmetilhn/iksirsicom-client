@@ -1,5 +1,3 @@
 <template>
-  <section class="welcome-are">
-    <h1>şalskdşlaskd</h1>
-  </section>
+  <section class="welcome-are"></section>
 </template>

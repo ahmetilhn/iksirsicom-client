@@ -15,6 +15,9 @@ export default {
 <style lang="scss" scoped>
 .app-small-header {
   width: 100%;
-  border: 1px solid $dark-one;
+  border-bottom: 2px solid $dark-one;
+  padding: 10px 0;
+  background-color: $primary-color;
+  color: $dark-one;
 }
 </style>

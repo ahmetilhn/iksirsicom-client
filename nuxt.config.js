@@ -36,8 +36,16 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
   ],
-
+  styleResources: {
+    // your settings here
+    scss: [
+      '@/assets/styles/sass/_colors.scss',
+      '@/assets/styles/sass/_animations.scss',
+      '@/assets/styles/sass/_variables.scss',
+    ],
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
