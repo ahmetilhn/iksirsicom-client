@@ -6,28 +6,28 @@
       <Nuxt />
     </main>
     <app-footer />
-    <!--Modals-->
-    <modal-container></modal-container>
+    <subscribe-modal />
   </div>
 </template>
 <script>
 import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
-import ModalContainer from '~/components/ModalContainer.vue'
+import SubscribeModal from '~/components/modals/SubscribeModal.vue'
 export default {
   name: 'DefaultLayout',
   components: {
     AppHeader,
     AppFooter,
     AppSmallHeader,
-    ModalContainer,
+    SubscribeModal,
   },
 }
 </script>
 <style lang="scss" scoped>
 .default-layout {
   width: 100vw;
+
   &__content {
     width: 100%;
   }

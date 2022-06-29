@@ -18,4 +18,7 @@
   &:hover {
     box-shadow: 3px 3px 0 0 $dark-one;
   }
+  &--no-hover {
+    box-shadow: 3px 3px 0 0 $dark-one;
+  }
 }

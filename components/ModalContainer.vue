@@ -1,23 +1,11 @@
 <template>
-  <div v-if="isVisible" class="modal-container flex--row row--middle--center">
+  <div id="modal_container" class="modal-container flex--row row--middle--center">
     <slot></slot>
   </div>
 </template>
 <script>
-import lockScrollMixin from '@/mixins/lock-scroll.mixin'
 export default {
   name: 'ModalContainer',
-  mixins: [lockScrollMixin],
-  data() {
-    return {
-      isVisible: false,
-    }
-  },
-  watch: {
-    isVisible(newVal, _) {
-      this.lockScroll(newVal)
-    },
-  },
 }
 </script>
 <style lang="scss" scoped>
