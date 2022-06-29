@@ -1,5 +1,7 @@
 <template>
   <article class="post-card border-effect">
+    <!---Like area-->
+    <like-box />
     <div class="post-card__img flex--row row--middle--center">
       <img
         v-if="false"
@@ -38,8 +40,10 @@
 </template>
 
 <script>
+import LikeBox from './LikeBox.vue'
 export default {
   name: 'PostCard',
+  components: { LikeBox },
 }
 </script>
 <style lang="scss" scoped>
@@ -47,6 +51,7 @@ export default {
   width: 33.33%;
   padding: 15px;
   border-width: 4px;
+  position: relative;
   &__img {
     width: 100%;
     height: 240px;

@@ -24,7 +24,6 @@
     width: 41.5px;
     height: 41.5px;
     border: 2px solid $dark-one;
-    border-radius: 5px;
     img {
       height: 30px;
     }
