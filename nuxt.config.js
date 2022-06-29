@@ -20,6 +20,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/styles/vendor/flex-classes.css',
     '@/assets/styles/vendor/reset.css', // SCSS file in the project
     '@/assets/styles/sass/_theme.scss',
   ],
