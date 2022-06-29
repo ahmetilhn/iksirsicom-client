@@ -1,8 +1,8 @@
 export default {
   methods: {
-    lockScroll(element, condition) {
+    lockScroll(condition) {
       if (process.client) {
-        const body = require('body-scroll-lock')
+        const body = document.body
         if (condition) {
           body.style.overflow = 'hidden'
         } else {
