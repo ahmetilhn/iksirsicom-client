@@ -11,3 +11,11 @@
     box-shadow: 3px 3px 0 0 $dark-one;
   }
 }
+
+.border-effect {
+  border: 2px solid $dark-one;
+  transition: 0.1s ease;
+  &:hover {
+    box-shadow: 3px 3px 0 0 $dark-one;
+  }
+}
