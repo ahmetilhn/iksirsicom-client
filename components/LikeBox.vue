@@ -44,7 +44,7 @@ export default {
     }
     &.liked {
       path {
-        fill: red !important;
+        fill: $red !important;
       }
     }
   }
