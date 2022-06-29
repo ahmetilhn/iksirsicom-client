@@ -1,8 +1,16 @@
 <template>
   <article class="post-card border-effect">
-    <div class="post-card__img">
+    <div class="post-card__img flex--row row--middle--center">
       <img
-        src="https://assets.codepen.io/285131/uslmOwQpdRRUwr6AmBP6JdzeHjS.jpg"
+        v-if="false"
+        class="post-card__img--original"
+        src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg"
+      />
+      <img
+        v-if="true"
+        class="post-card__img--placeholder"
+        src="@/assets/img/logo.svg"
+        alt="İksirsi placeholder"
       />
     </div>
     <div class="post-card__body">
@@ -37,15 +45,20 @@ export default {
 <style lang="scss" scoped>
 .post-card {
   width: 33.33%;
-  padding: 10px;
+  padding: 15px;
   border-width: 4px;
   &__img {
     width: 100%;
-    height: 300px;
-    img {
+    height: 240px;
+    &--original {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    &--placeholder {
+      filter: grayscale(1);
+      width: 50px;
+      opacity: 0.5;
     }
   }
   &__body {
@@ -64,7 +77,7 @@ export default {
   &__desc {
     @include golden-text(16);
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: $dark-two;

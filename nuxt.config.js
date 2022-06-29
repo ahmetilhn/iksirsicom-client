@@ -5,7 +5,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'iksirsicom-client',
+    title: 'iksirsi - Developer Blog',
     htmlAttrs: {
       lang: 'en',
     },
