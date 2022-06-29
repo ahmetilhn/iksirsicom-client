@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="index flex--column column--middle--center">
     <welcome-area />
     <vertical-listing />
   </div>
@@ -17,3 +17,8 @@ export default {
   layout: 'DefaultLayout',
 }
 </script>
+<style lang="scss" scoped>
+.index {
+  width: 100%;
+}
+</style>

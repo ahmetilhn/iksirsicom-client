@@ -18,7 +18,7 @@ export default {
 .welcome-area {
   width: 100%;
   height: 600px;
-  background-color: $gray-two;
+  background-color: $gray-three;
   text-align: center;
   img {
     width: 80px;

@@ -30,6 +30,7 @@ export default {
 .post-card {
   width: 33.33%;
   padding: 10px;
+  border-width: 4px;
   &__img {
     width: 100%;
     height: 300px;
@@ -46,10 +47,19 @@ export default {
   &__title {
     @include golden-text(22);
     margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bold;
   }
   &__desc {
-    @include golden-text(18);
-    line-clamp: 3;
+    @include golden-text(16);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: $dark-two;
   }
 }
 </style>

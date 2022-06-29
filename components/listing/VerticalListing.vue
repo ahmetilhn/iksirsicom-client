@@ -1,6 +1,6 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <post-card />
+    <post-card v-for="item in 6" :key="item" />
   </div>
 </template>
 <script>
@@ -15,5 +15,13 @@ export default {
 .vertical-listing {
   max-width: 1280px;
   padding: 50px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  ::v-deep {
+    .post-card {
+      width: calc(33.33% - 10px);
+      margin-bottom: 20px;
+    }
+  }
 }
 </style>
