@@ -4,8 +4,20 @@
   </div>
 </template>
 <script>
+import lockScrollMixin from '~/mixins/lock-scroll.mixin'
 export default {
   name: 'ModalContainer',
+  mixins: ['locksScrollMixin'],
+  data() {
+    return {
+      isVisible: false,
+    }
+  },
+  watch: {
+    isVisible(newVal, oldVal) {
+      this.lockScroll(newVal)
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
