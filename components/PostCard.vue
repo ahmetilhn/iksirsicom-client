@@ -18,6 +18,14 @@
         management woes.
       </p>
     </div>
+    <div class="post-card__info flex--row row--middle--center">
+      <span>2 DK'lık okuma</span>
+      <div class="post-card__tags">
+        <nuxt-link to="">Javascript</nuxt-link>
+        <nuxt-link to="">Nodejs</nuxt-link>
+        <nuxt-link to="">RestAPI</nuxt-link>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -56,10 +64,26 @@ export default {
   &__desc {
     @include golden-text(16);
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: $dark-two;
+  }
+  &__info {
+    padding: 10px 0;
+    justify-content: space-between;
+    span {
+      color: $dark-two;
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+  &__tags {
+    a {
+      font-size: 13px;
+      color: $dark-two;
+      margin: 5px;
+    }
   }
 }
 </style>

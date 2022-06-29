@@ -21,8 +21,8 @@
     max-width: 1280px;
   }
   &__logo {
-    width: 40px;
-    height: 40px;
+    width: 41.5px;
+    height: 41.5px;
     border: 2px solid $dark-one;
     border-radius: 5px;
     img {
