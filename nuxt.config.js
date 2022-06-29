@@ -1,4 +1,8 @@
+import { resolve } from 'path'
 export default {
+  alias: {
+    '@': resolve(__dirname, './'),
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'iksirsicom-client',
@@ -15,7 +19,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/styles/vendor/reset.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
