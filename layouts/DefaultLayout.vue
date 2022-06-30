@@ -2,7 +2,7 @@
   <div class="default-layout flex--column column--middle--center">
     <app-small-header />
     <app-header />
-    <main class="default-layout__content">
+    <main class="default-layout__content flex--column column--middle--center">
       <Nuxt />
     </main>
     <app-footer />

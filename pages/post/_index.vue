@@ -1,5 +1,5 @@
 <template>
-    <div class="post">
+    <div class="post flex--row row--middle--center">
         <post-detail-content />
     </div>
 </template>
@@ -11,3 +11,11 @@ export default {
     layout: "DefaultLayout",
 }
 </script>
+<style lang="scss" scoped>
+.post {
+    padding: 50px 0;
+    width: 100%;
+    max-width: $max-width-one;
+    justify-content: space-between;
+}
+</style>
