@@ -16,6 +16,5 @@ export default {
     padding: 50px 0;
     width: 100%;
     max-width: $max-width-one;
-    justify-content: space-between;
 }
 </style>
