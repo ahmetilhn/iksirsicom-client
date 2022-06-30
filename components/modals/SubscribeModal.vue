@@ -10,7 +10,7 @@
                 </p>
             </div>
             <div class="subscribe-modal__form flex--row row--middle--center">
-                <input class="border-effect" type="text" placeholder="E-posta" />
+                <input class="input border-effect" type="text" placeholder="E-posta" />
                 <button class="btn-border">Kaydol</button>
             </div>
         </div>
@@ -52,15 +52,26 @@ export default {
 </script>
 <style lang="scss" scoped>
 .subscribe-modal {
-    max-width: 600px;
+    max-width: 100vw;
     width: 600px;
     height: 280px;
     background-color: $white;
     border-radius: 12px;
 
+    @include extra-small-device {
+        height: 100%;
+        border-radius: 20px 20px 0 0;
+        width: auto;
+        padding: 10px;
+    }
+
     &__body {
         text-align: center;
         padding: 0 20px;
+
+        @include extra-small-device {
+            padding: 0 $padding-three;
+        }
 
         h6 {
             @include golden-text(25);
@@ -78,6 +89,12 @@ export default {
 
         input {
             width: calc(70% - 60px);
+
+            @include extra-small-device {
+                width: calc(100% - 100px);
+                margin-right: 5px;
+            }
+
             margin-right: 20px;
         }
     }

@@ -1,6 +1,8 @@
 <template>
   <div id="modal_container" class="modal-container flex--row row--middle--center">
-    <slot></slot>
+    <div class="modal-container__content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -17,5 +19,18 @@ export default {
   left: 0;
   top: 0;
   z-index: 111111;
+
+  @include medium-device {
+    padding: 0 $padding-two;
+  }
+
+  &__content {
+    @include extra-small-device {
+      position: absolute;
+      padding: 0;
+      height: 50vh;
+      bottom: 0;
+    }
+  }
 }
 </style>
