@@ -30,6 +30,7 @@ export default {
 
   &__content {
     width: 100%;
+    min-height: calc(100vh - 120px);
   }
 }
 </style>

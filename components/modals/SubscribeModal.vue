@@ -27,7 +27,7 @@ export default {
     mixins: [lockScrollMixin],
     data() {
         return {
-            isVisible: true
+            isVisible: false
         }
     },
     watch: {

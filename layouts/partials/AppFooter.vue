@@ -24,6 +24,7 @@ export default {
   background-color: $primary-color;
   min-height: 200px;
   border-top: 2px solid $dark-one;
+
   &__social-links {
     a {
       width: 36px;
@@ -36,6 +37,7 @@ export default {
       align-items: center;
       margin: 0 5px;
       border: 1px solid $dark-one;
+
       img {
         height: 18px;
       }
