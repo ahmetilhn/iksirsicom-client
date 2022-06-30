@@ -20,21 +20,53 @@ export default {
   height: 600px;
   background-color: $gray-three;
   text-align: center;
+
+  @include small-device {
+    padding: 0 20px;
+    height: calc(100vh - 90px);
+  }
+
   img {
     width: 80px;
+
+    @include medium-device {
+      width: 70px
+    }
+
+    @include small-device {
+      width: 60px
+    }
   }
+
   h2 {
     @include golden-text(40);
     max-width: 900px;
     font-weight: bold;
     font-family: $roboto-slab;
     margin: 40px 0;
+
+    @include medium-device {
+      @include golden-text(37);
+    }
+
+    @include small-device {
+      @include golden-text(32);
+    }
   }
+
   p {
     @include golden-text(20);
     max-width: 800px;
     color: $dark-two;
     margin-bottom: 40px;
+
+    @include medium-device {
+      @include golden-text(18);
+    }
+
+    @include medium-device {
+      @include golden-text(16);
+    }
   }
 }
 </style>

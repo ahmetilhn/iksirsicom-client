@@ -14,18 +14,38 @@
 .app-header {
   width: 100vw;
   border-bottom: 2px solid $dark-one;
+
   &__container {
     width: 100%;
     padding: 16px 0;
     justify-content: space-between;
-    max-width: 1280px;
+    max-width: $max-width-one;
+
+    @include large-device {
+      padding: 16px 30px;
+    }
+
+    @include medium-device {
+      padding: 16px 24px;
+    }
+
+    @include small-device {
+      padding: 10px 16px;
+    }
   }
+
   &__logo {
     width: 41.5px;
     height: 41.5px;
     border: 2px solid $dark-one;
+
+    @include small-device {
+      width: 36px;
+      height: 36px;
+    }
+
     img {
-      height: 30px;
+      height: 80%;
     }
   }
 }

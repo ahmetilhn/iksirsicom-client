@@ -1,5 +1,6 @@
 .btn-border {
-  padding: 10px 20px;
+  height: 41.5px;
+  padding: 0 24px;
   background-color: $primary-color;
   color: $dark-one;
   border: 2px solid $dark-one;
@@ -7,6 +8,9 @@
   transition: 0.1s ease;
   font-family: $roboto-slab;
   font-weight: 500;
+  @include small-device {
+    height: 36px;
+  }
   &:hover {
     box-shadow: 3px 3px 0 0 $dark-one;
   }

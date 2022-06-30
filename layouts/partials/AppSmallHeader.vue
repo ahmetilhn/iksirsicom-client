@@ -22,5 +22,10 @@ export default {
   position: sticky;
   top: 0;
   z-index: 22;
+
+  @include small-device {
+    font-size: 13px;
+    padding: 8px 0;
+  }
 }
 </style>
