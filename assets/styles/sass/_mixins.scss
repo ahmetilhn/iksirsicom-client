@@ -4,3 +4,35 @@ $golden-raito: 1.618;
   font-size: ($fontSize / 16) + rem;
   line-height: (($fontSize / 16) * $golden-raito) + rem;
 }
+
+//Device sizes
+$other-devices: 400px;
+$extra-small: 576px;
+$small: 768px;
+$medium: 992px;
+$large: 1280px;
+$extra-large: 1400px;
+
+@mixin extra-small-device {
+  @media (max-width: $extra-small) {
+    @content;
+  }
+}
+
+@mixin small-device {
+  @media (max-width: $small) {
+    @content;
+  }
+}
+
+@mixin medium-device {
+  @media (max-width: $medium) {
+    @content;
+  }
+}
+
+@mixin large-device {
+  @media (max-width: $large) {
+    @content;
+  }
+}
