@@ -33,9 +33,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .like-box {
-  position: absolute;
-  left: 30px;
-  top: 30px;
   svg {
     width: 24px;
     cursor: pointer;

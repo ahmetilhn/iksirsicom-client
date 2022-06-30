@@ -1,36 +1,36 @@
 <template>
-    <article class="post-card border-effect">
-      <!---Like area-->
-      <like-box />
-      <div class="post-card__img flex--row row--middle--center">
-        <img v-if="false" class="post-card__img--original"
-          src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
-        <img v-if="true" class="post-card__img--placeholder" src="@/assets/img/logo.svg" alt="İksirsi placeholder" />
+  <article class="post-card border-effect">
+    <!---Like area-->
+    <like-box />
+    <div class="post-card__img flex--row row--middle--center">
+      <img v-if="false" class="post-card__img--original"
+        src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
+      <img v-if="true" class="post-card__img--placeholder" src="@/assets/img/logo.svg" alt="İksirsi placeholder" />
+    </div>
+    <div class="post-card__body">
+      <nuxt-link to="/post/12">
+        <h2 class="post-card__title">
+          Managing Secrets in Node.js with HashiCorp Vault
+        </h2>
+      </nuxt-link>
+      <p class="post-card__desc">
+        As the number of services grows in an organization, the problem of
+        secret management only gets worse. Between Zero Trust and the emergence
+        of microservices, handling secrets such as tokens, credentials, and keys
+        has become an increasingly challenging task. That’s where a solution
+        like HashiCorp’s Vault can help organizations solve their secret
+        management woes.
+      </p>
+    </div>
+    <div class="post-card__info flex--row row--middle--center">
+      <span>2 DK'lık okuma</span>
+      <div class="post-card__tags">
+        <nuxt-link to="">Javascript</nuxt-link>
+        <nuxt-link to="">Nodejs</nuxt-link>
+        <nuxt-link to="">RestAPI</nuxt-link>
       </div>
-      <div class="post-card__body">
-        <nuxt-link to="/post/12">
-          <h2 class="post-card__title">
-            Managing Secrets in Node.js with HashiCorp Vault
-          </h2>
-        </nuxt-link>
-        <p class="post-card__desc">
-          As the number of services grows in an organization, the problem of
-          secret management only gets worse. Between Zero Trust and the emergence
-          of microservices, handling secrets such as tokens, credentials, and keys
-          has become an increasingly challenging task. That’s where a solution
-          like HashiCorp’s Vault can help organizations solve their secret
-          management woes.
-        </p>
-      </div>
-      <div class="post-card__info flex--row row--middle--center">
-        <span>2 DK'lık okuma</span>
-        <div class="post-card__tags">
-          <nuxt-link to="">Javascript</nuxt-link>
-          <nuxt-link to="">Nodejs</nuxt-link>
-          <nuxt-link to="">RestAPI</nuxt-link>
-        </div>
-      </div>
-    </article>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -46,6 +46,13 @@ export default {
   padding: 15px;
   border-width: 4px;
   position: relative;
+
+  ::v-deep .like-box {
+
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
 
   &__img {
     width: 100%;

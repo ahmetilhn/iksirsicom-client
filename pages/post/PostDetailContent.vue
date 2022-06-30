@@ -8,6 +8,7 @@
                 watch the results in the right.This text you see here is *actually- written in Markdown! To get a feel
                 for Markdown's syntax, type some text into the left window and
                 watch the results in the right.</h2>
+            <post-detail-info />
             <figure class="flex--column column--middle--center">
                 <img src="https://i.imgur.com/6xrqbvr.jpeg" alt="" />
                 <figcaption>Photo Title</figcaption>
@@ -18,15 +19,17 @@
 </template>
 <script>
 import markdownMixin from "@/mixins/markdown.mixin"
+import PostDetailInfo from "~/components/PostDetailInfo.vue"
 export default {
     name: "PostDetailContent",
+    components: { PostDetailInfo },
     mixins: [markdownMixin],
 }
 </script>
 <style lang="scss">
 .post-detail-content {
     width: 100%;
-    max-width: 70%;
+    max-width: 840px;
 
     &__header {
         font-family: $roboto-slab;
@@ -34,6 +37,14 @@ export default {
         h1 {
             @include golden-text(44);
             font-weight: 600;
+
+            @include small-device {
+                @include golden-text(32);
+            }
+
+            @include extra-small-device {
+                @include golden-text(28);
+            }
         }
 
         h2 {
@@ -42,6 +53,9 @@ export default {
         }
 
         figure {
+
+            padding: 40px 0;
+
             img {
                 width: 100%;
             }
@@ -62,6 +76,10 @@ export default {
             display: block;
             padding: 30px 0;
             @include golden-text(18);
+
+            @include small-device {
+                @include golden-text(18);
+            }
         }
 
         h3,
@@ -74,18 +92,34 @@ export default {
 
         h3 {
             @include golden-text(28);
+
+            @include small-device {
+                @include golden-text(24);
+            }
         }
 
         h4 {
             @include golden-text(25);
+
+            @include small-device {
+                @include golden-text(21);
+            }
         }
 
         h5 {
             @include golden-text(22);
+
+            @include small-device {
+                @include golden-text(19);
+            }
         }
 
         h6 {
             @include golden-text(19);
+
+            @include small-device {
+                @include golden-text(18);
+            }
         }
     }
 }

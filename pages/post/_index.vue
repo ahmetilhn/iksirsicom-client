@@ -16,5 +16,17 @@ export default {
     padding: 50px 0;
     width: 100%;
     max-width: $max-width-one;
+
+    @include medium-device {
+        padding: 50px $padding-one;
+    }
+
+    @include small-device {
+        padding: 40px $padding-two;
+    }
+
+    @include extra-small-device {
+        padding: 30px $padding-three;
+    }
 }
 </style>
