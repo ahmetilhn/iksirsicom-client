@@ -5,7 +5,8 @@
     <div class="post-card__img flex--row row--middle--center">
       <img v-if="false" class="post-card__img--original"
         src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
-      <img v-if="true" class="post-card__img--placeholder" src="@/assets/img/logo.svg" alt="İksirsi placeholder" />
+      <!---For not image-->
+      <placeholder-image v-if="true" />
     </div>
     <div class="post-card__body">
       <nuxt-link to="/post/12">
@@ -35,9 +36,10 @@
 
 <script>
 import LikeBox from './LikeBox.vue'
+import PlaceholderImage from './PlaceholderImage.vue'
 export default {
   name: 'PostCard',
-  components: { LikeBox },
+  components: { LikeBox, PlaceholderImage },
 }
 </script>
 <style lang="scss" scoped>
@@ -57,18 +59,13 @@ export default {
   &__img {
     width: 100%;
     height: 240px;
-
+    
     &--original {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    &--placeholder {
-      filter: grayscale(1);
-      width: 50px;
-      opacity: 0.5;
-    }
   }
 
   &__body {

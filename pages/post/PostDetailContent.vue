@@ -9,10 +9,13 @@
                 for Markdown's syntax, type some text into the left window and
                 watch the results in the right.</h2>
             <post-detail-info />
-            <figure class="flex--column column--middle--center">
-                <img src="https://i.imgur.com/6xrqbvr.jpeg" alt="" />
-                <figcaption>Photo Title</figcaption>
-            </figure>
+            <div class="post-detail-content__poster flex--column column--middle--center">
+                <figure v-if="true" class="flex--column column--middle--center">
+                    <img src="https://i.imgur.com/6xrqbvr.jpeg" alt="" />
+                    <figcaption>Photo Title</figcaption>
+                </figure>
+                <placeholder-image v-if="false" />
+            </div>
         </div>
         <article class="post-detail-content__html" v-html="htmlContent"></article>
     </section>
@@ -20,9 +23,10 @@
 <script>
 import markdownMixin from "@/mixins/markdown.mixin"
 import PostDetailInfo from "~/components/PostDetailInfo.vue"
+import PlaceholderImage from "~/components/PlaceholderImage.vue"
 export default {
     name: "PostDetailContent",
-    components: { PostDetailInfo },
+    components: { PostDetailInfo, PlaceholderImage },
     mixins: [markdownMixin],
 }
 </script>
@@ -52,10 +56,15 @@ export default {
             padding: 40px 0;
         }
 
+    }
+
+    &__poster {
+
+        padding: 40px 0;
+
+        min-height: 400px;
+
         figure {
-
-            padding: 40px 0;
-
             img {
                 width: 100%;
             }
@@ -67,6 +76,7 @@ export default {
                 margin-top: 10px;
             }
         }
+
     }
 
     &__html {
