@@ -22,15 +22,15 @@
     max-width: $max-width-one;
 
     @include large-device {
-      padding: 16px 30px;
+      padding: 16px $padding-one;
     }
 
     @include medium-device {
-      padding: 16px 24px;
+      padding: 16px $padding-two;
     }
 
     @include small-device {
-      padding: 10px 16px;
+      padding: 10px $padding-three;
     }
   }
 

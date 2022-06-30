@@ -17,9 +17,32 @@ export default {
   padding: 50px 0;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include large-device {
+    padding: 50px $padding-one;
+  }
+
+  @include medium-device {
+    padding: 50px $padding-two;
+  }
+
+  @include small-device {
+    padding: 50px $padding-three;
+  }
+
   ::v-deep {
     .post-card {
       width: calc(33.33% - 10px);
+
+      @include medium-device {
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+      }
+
+      @include extra-small-device {
+        width: 100%;
+      }
+
       margin-bottom: 20px;
     }
   }

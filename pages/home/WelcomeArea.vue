@@ -22,7 +22,7 @@ export default {
   text-align: center;
 
   @include small-device {
-    padding: 0 20px;
+    padding: 0 $padding-three;
     height: calc(100vh - 90px);
   }
 
