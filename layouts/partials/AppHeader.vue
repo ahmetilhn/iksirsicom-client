@@ -1,9 +1,9 @@
 <template>
   <header class="app-header flex--row row--middle--center">
     <div class="app-header__container flex--row row--middle--center">
-      <div class="app-header__logo flex--row row--middle--center">
+      <nuxt-link class="app-header__logo flex--row row--middle--center" to="/home">
         <img src="@/assets/img/logo.svg" alt="iksirsi Logo" />
-      </div>
+      </nuxt-link>
       <div class="app-header__buttons flex--row row--middle--center">
         <button class="btn-border">Listem</button>
       </div>
@@ -47,6 +47,7 @@
     img {
       height: 80%;
     }
+
   }
 }
 </style>
