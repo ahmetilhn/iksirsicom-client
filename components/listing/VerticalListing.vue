@@ -1,6 +1,9 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
     <post-card v-for="item in 6" :key="item" />
+    <div class="vertical-listing__bottom flex--row row--middle--center">
+      <button class="btn-border">Daha fazla</button>
+    </div>
   </div>
 </template>
 <script>
@@ -45,6 +48,11 @@ export default {
 
       margin-bottom: 20px;
     }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+    width: 100%;
   }
 }
 </style>
