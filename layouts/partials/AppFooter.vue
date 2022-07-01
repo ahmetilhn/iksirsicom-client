@@ -1,21 +1,27 @@
 <template>
   <footer class="app-footer flex--column column--middle--center">
     <div class="app-footer__social-links flex--row row--middle--center">
-      <nuxt-link to="">
-        <img src="@/assets/img/social/github.svg" alt="İksirsi github" />
-      </nuxt-link>
-      <nuxt-link to="">
-        <img src="@/assets/img/social/linkedin.svg" alt="İksirsi linkedin" />
-      </nuxt-link>
-      <nuxt-link to="">
-        <img src="@/assets/img/social/whatsapp.svg" alt="İksirsi whatsapp" />
-      </nuxt-link>
+      <a target="BLANK" :href="SOCIAL_LINKS.github.url">
+        <img src="@/assets/img/social/github.svg" :alt="SOCIAL_LINKS.github.title" />
+      </a>
+      <a target="BLANK" :href="SOCIAL_LINKS.linkedin.url">
+        <img src="@/assets/img/social/linkedin.svg" :alt="SOCIAL_LINKS.linkedin.title" />
+      </a>
+      <a target="BLANK" :href="SOCIAL_LINKS.whatsapp.url">
+        <img src="@/assets/img/social/whatsapp.svg" :alt="SOCIAL_LINKS.whatsapp.title" />
+      </a>
     </div>
   </footer>
 </template>
 <script>
+import { SOCIAL_LINKS } from '~/constants/social-links.constants'
 export default {
   name: 'AppFooter',
+  data() {
+    return {
+      SOCIAL_LINKS
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
