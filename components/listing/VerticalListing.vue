@@ -2,7 +2,7 @@
   <div class="vertical-listing flex--row row--middle--center">
     <post-card v-for="item in 6" :key="item" />
     <div class="vertical-listing__bottom flex--row row--middle--center">
-      <button class="btn-border">Daha fazla</button>
+      <button class="btn-border">Daha fazla gör</button>
     </div>
   </div>
 </template>
