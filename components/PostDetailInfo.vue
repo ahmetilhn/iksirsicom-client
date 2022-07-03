@@ -1,20 +1,21 @@
 <template>
     <div class="post-detail-info flex--row row--middle--center">
         <p class="post-detail-info__author">Author: <strong>Ahmet ilhan</strong></p>
-        <like-box />
+        <view-box />
     </div>
 </template>
 <script>
-import LikeBox from './LikeBox.vue'
+import ViewBox from './ViewBox.vue'
 export default {
     name: "PostDetailInfo",
-    components: { LikeBox },
+    components: {
+        ViewBox
+    }
 }
 </script>
 <style lang="scss" scoped>
 .post-detail-info {
     justify-content: space-between;
-
 
     &__author {
         p {
