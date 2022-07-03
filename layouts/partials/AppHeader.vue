@@ -1,7 +1,7 @@
 <template>
   <header class="app-header flex--row row--middle--center">
     <div class="app-header__container flex--row row--middle--center">
-      <nuxt-link class="app-header__logo flex--row row--middle--center" to="/home">
+      <nuxt-link class="app-header__logo flex--row row--middle--center" to="/">
         <img src="@/assets/img/logo.svg" alt="iksirsi Logo" />
       </nuxt-link>
       <div class="app-header__buttons flex--row row--middle--center">
