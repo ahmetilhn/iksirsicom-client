@@ -18,15 +18,22 @@
             </div>
         </div>
         <article class="post-detail-content__html" v-html="htmlContent"></article>
+        <hr class="hr-line">
+        <div class="post-detail-content__actions flex--row row--middle--center">
+            <post-tags />
+            <like-box />
+        </div>
     </section>
 </template>
 <script>
 import markdownMixin from "@/mixins/markdown.mixin"
 import PostDetailInfo from "~/components/PostDetailInfo.vue"
 import PlaceholderImage from "~/components/PlaceholderImage.vue"
+import LikeBox from "~/components/LikeBox.vue"
+import PostTags from "~/components/PostTags.vue"
 export default {
     name: "PostDetailContent",
-    components: { PostDetailInfo, PlaceholderImage },
+    components: { PostDetailInfo, PlaceholderImage, LikeBox, PostTags },
     mixins: [markdownMixin],
 }
 </script>
@@ -131,6 +138,11 @@ export default {
                 @include golden-text(18);
             }
         }
+    }
+
+    &__actions {
+        justify-content: space-between;
+        margin-top: 40px;
     }
 }
 </style>
