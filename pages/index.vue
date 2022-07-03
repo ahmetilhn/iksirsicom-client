@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import WelcomeArea from '../components/home/WelcomeArea.vue'
+import WelcomeArea from '@/components/home/WelcomeArea.vue'
 import VerticalListing from '@/components/listing/VerticalListing.vue'
 export default {
   name: 'IndexPage',

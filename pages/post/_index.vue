@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import PostDetailContent from "../../components/post/PostDetailContent.vue";
+import PostDetailContent from "@/components/post/PostDetailContent.vue";
 export default {
     name: "PostDetail",
     components: { PostDetailContent },
