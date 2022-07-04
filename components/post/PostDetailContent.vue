@@ -27,7 +27,7 @@
     </section>
 </template>
 <script>
-import htmlContentMixin from '@/mixins/markdown.mixin'
+import htmlContentMixin from '@/mixins/html-content.mixin'
 import PostDetailInfo from '~/components/PostDetailInfo.vue'
 import PlaceholderImage from '~/components/PlaceholderImage.vue'
 import LikeBox from '~/components/LikeBox.vue'

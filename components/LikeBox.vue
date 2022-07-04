@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'LikeBox',
   data() {
@@ -19,8 +20,14 @@ export default {
   },
   methods: {
     liked() {
-      this.isLike = !this.isLike
-      this.likeCount++
+      if (this.isLike) {
+        this.isLike = false;
+        this.likeCount--;
+      }
+      else {
+        this.isLike = true;
+        this.likeCount++;
+      }
     },
   },
 }
