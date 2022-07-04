@@ -2,6 +2,7 @@
   <article class="post-card border-effect">
     <!---Like area-->
     <like-box />
+    <save-box />
     <div class="post-card__img flex--row row--middle--center">
       <img v-if="false" class="post-card__img--original"
         src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
@@ -36,10 +37,11 @@
 
 <script>
 import LikeBox from './LikeBox.vue'
+import SaveBox from './SaveBox.vue'
 import PlaceholderImage from './PlaceholderImage.vue'
 export default {
   name: 'PostCard',
-  components: { LikeBox, PlaceholderImage },
+  components: { LikeBox, SaveBox, PlaceholderImage },
 }
 </script>
 <style lang="scss" scoped>
@@ -49,17 +51,26 @@ export default {
   border-width: 4px;
   position: relative;
 
-  ::v-deep .like-box {
+  ::v-deep {
 
-    position: absolute;
-    left: 30px;
-    top: 30px;
+    .like-box,
+    .save-box {
+
+      position: absolute;
+      left: 30px;
+      top: 30px;
+    }
+
+    .save-box {
+      left: auto;
+      right: 30px;
+    }
   }
 
   &__img {
     width: 100%;
     height: 240px;
-    
+
     &--original {
       width: 100%;
       height: 100%;
