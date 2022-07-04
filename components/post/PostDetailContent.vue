@@ -2,12 +2,13 @@
     <section class="post-detail-content">
         <div class="post-detail-content__header">
             <h1>Import a HTML file and watch it magically convert to Markdown</h1>
-            <h2>This text you see here is *actually- written in Markdown! To get a feel
-                for Markdown's syntax, type some text into the left window and
-
-                watch the results in the right.This text you see here is *actually- written in Markdown! To get a feel
-                for Markdown's syntax, type some text into the left window and
-                watch the results in the right.</h2>
+            <h2>
+                This text you see here is *actually- written in Markdown! To get a feel
+                for Markdown's syntax, type some text into the left window and watch the
+                results in the right.This text you see here is *actually- written in
+                Markdown! To get a feel for Markdown's syntax, type some text into the
+                left window and watch the results in the right.
+            </h2>
             <post-detail-info />
             <div class="post-detail-content__poster flex--column column--middle--center">
                 <figure v-if="true" class="flex--column column--middle--center">
@@ -18,7 +19,7 @@
             </div>
         </div>
         <article class="post-detail-content__html" v-html="htmlContent"></article>
-        <hr class="hr-line">
+        <hr class="hr-line" />
         <div class="post-detail-content__actions flex--row row--middle--center">
             <post-tags />
             <like-box />
@@ -26,15 +27,15 @@
     </section>
 </template>
 <script>
-import markdownMixin from "@/mixins/markdown.mixin"
-import PostDetailInfo from "~/components/PostDetailInfo.vue"
-import PlaceholderImage from "~/components/PlaceholderImage.vue"
-import LikeBox from "~/components/LikeBox.vue"
-import PostTags from "~/components/PostTags.vue"
+import htmlContentMixin from '@/mixins/markdown.mixin'
+import PostDetailInfo from '~/components/PostDetailInfo.vue'
+import PlaceholderImage from '~/components/PlaceholderImage.vue'
+import LikeBox from '~/components/LikeBox.vue'
+import PostTags from '~/components/PostTags.vue'
 export default {
-    name: "PostDetailContent",
+    name: 'PostDetailContent',
     components: { PostDetailInfo, PlaceholderImage, LikeBox, PostTags },
-    mixins: [markdownMixin],
+    mixins: [htmlContentMixin],
 }
 </script>
 <style lang="scss">
@@ -62,11 +63,9 @@ export default {
             @include golden-text(20);
             padding: 40px 0;
         }
-
     }
 
     &__poster {
-
         padding: 40px 0;
 
         min-height: 400px;
@@ -83,7 +82,6 @@ export default {
                 margin-top: 10px;
             }
         }
-
     }
 
     &__html {

@@ -1,4 +1,3 @@
-import { marked } from 'marked'
 export default {
   data() {
     return {
@@ -18,11 +17,5 @@ export default {
       <p>This text you see here is *actually- written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.This text you see here is *actually- written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.</p>
       `,
     }
-  },
-  methods: {
-    convertHTML() {
-      const html = marked.parse(this.mdContent)
-      this.htmlContent = html
-    },
   },
 }
