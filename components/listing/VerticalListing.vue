@@ -1,6 +1,6 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <post-card v-for="item in 6" :key="item" />
+    <post-card :postDetail="item" v-for="item in items" :key="item.id" />
     <div class="vertical-listing__bottom flex--row row--middle--center">
       <button class="btn-border">Daha fazla gör</button>
     </div>
@@ -11,6 +11,30 @@ import PostCard from '../PostCard.vue'
 
 export default {
   name: 'VerticalListing',
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+        },
+        {
+          id: 2
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4
+        },
+        {
+          id: 5,
+        },
+        {
+          id: 6
+        }
+      ]
+    }
+  },
   components: { PostCard },
 }
 </script>

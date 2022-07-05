@@ -9,11 +9,11 @@ export default {
       this.$store.commit('modules/savedItems/setItem', item)
     },
     removeItem(item) {
-      console.log(item)
+      this.$store.commit('modules/savedItems/removeItem', item)
     },
     saveClickHandler(item) {
-      this.isSaved = !this.isSaved
       this.isSaved ? this.removeItem(item) : this.setItem(item)
+      this.isSaved = !this.isSaved
     },
   },
 }
