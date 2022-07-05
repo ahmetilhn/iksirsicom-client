@@ -1,10 +1,19 @@
-import { SAVED_POSTS_KEY } from "~/constants/localstorage.constants"
 export default {
+  data() {
+    return {
+      isSaved: false,
+    }
+  },
   methods: {
     setItem(item) {
-      if (process.client) {
-        localStorage.setItem(SAVED_POSTS_KEY, JSON.stringify(item))
-      }
+      this.$store.commit('modules/savedItems/setItem', item)
+    },
+    removeItem(item) {
+      console.log(item)
+    },
+    saveClickHandler(item) {
+      this.isSaved = !this.isSaved
+      this.isSaved ? this.removeItem(item) : this.setItem(item)
     },
   },
 }

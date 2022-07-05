@@ -11,19 +11,15 @@
 <script>
 export default {
     name: "SaveBox",
-    data() {
-        return {
-            isSaved: false
-        }
+    props: {
+        isSaved: {
+            type: Boolean,
+            default: false
+        },
     },
     methods: {
         save() {
-            if (this.isSaved) {
-                this.isSaved = false;
-            }
-            else {
-                this.isSaved = true
-            }
+            this.$emit("saveClick")
         }
     }
 }

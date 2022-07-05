@@ -2,7 +2,7 @@
   <article class="post-card border-effect">
     <!---Like area-->
     <like-box />
-    <save-box />
+    <save-box :isSaved="isSaved" @saveClick="saveClickHandler(itemData)" />
     <div class="post-card__img flex--row row--middle--center">
       <img v-if="false" class="post-card__img--original"
         src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
@@ -43,6 +43,13 @@ import savePostMixin from '~/mixins/save-post.mixin'
 export default {
   name: 'PostCard',
   components: { LikeBox, SaveBox, PlaceholderImage },
+  data() {
+    return {
+      itemData: {
+        id: 123123123,
+      }
+    }
+  },
   mixins: [savePostMixin]
 }
 </script>
