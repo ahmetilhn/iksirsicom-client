@@ -39,9 +39,11 @@
 import LikeBox from './LikeBox.vue'
 import SaveBox from './SaveBox.vue'
 import PlaceholderImage from './PlaceholderImage.vue'
+import savePostMixin from '~/mixins/save-post.mixin'
 export default {
   name: 'PostCard',
   components: { LikeBox, SaveBox, PlaceholderImage },
+  mixins: [savePostMixin]
 }
 </script>
 <style lang="scss" scoped>
