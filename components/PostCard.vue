@@ -13,7 +13,7 @@
       <placeholder-image v-if="true" />
     </div>
     <div class="post-card__body">
-      <nuxt-link to="/post/12">
+      <nuxt-link :to="'post/' + postDetail.id">
         <h2 class="post-card__title">
           Managing Secrets in Node.js with HashiCorp Vault
         </h2>
