@@ -28,8 +28,13 @@ export default {
       const items = getStorage(SAVED_POSTS_KEY)
       this.$store.commit('modules/savedItems/setItems', items)
     },
+    setIsSaved() {
+      const isItem = this.items.some((item) => item.id === this.postDetail.id)
+      this.isSaved = !!isItem
+    },
   },
   mounted() {
     this.initSavePost()
+    this.setIsSaved()
   },
 }

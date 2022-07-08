@@ -4,8 +4,11 @@
     <like-box />
     <save-box :isSaved="isSaved" @saveClick="saveClickHandler(postDetail)" />
     <div class="post-card__img flex--row row--middle--center">
-      <img v-if="false" class="post-card__img--original"
-        src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg" />
+      <img
+        v-if="false"
+        class="post-card__img--original"
+        src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg"
+      />
       <!---For not image-->
       <placeholder-image v-if="true" />
     </div>
@@ -47,8 +50,8 @@ export default {
   props: {
     postDetail: {
       type: Object,
-      default: () => { }
-    }
+      default: () => {},
+    },
   },
 }
 </script>
@@ -60,10 +63,8 @@ export default {
   position: relative;
 
   ::v-deep {
-
     .like-box,
     .save-box {
-
       position: absolute;
       left: 30px;
       top: 30px;
@@ -84,7 +85,6 @@ export default {
       height: 100%;
       object-fit: cover;
     }
-
   }
 
   &__body {
