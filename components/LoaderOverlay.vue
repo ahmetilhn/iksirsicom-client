@@ -1,16 +1,25 @@
 <template>
-  <div class="loader-overlay flex--column column--middle--center">
+  <div
+    v-if="!appIsReady"
+    class="loader-overlay flex--column column--middle--center"
+  >
     <img src="@/assets/img/logo-animation.svg" alt="" />
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import lockScrollMixin from '~/mixins/lock-scroll.mixin'
 export default {
   name: 'LoaderOverlay',
   mixins: [lockScrollMixin],
+  computed: {
+    ...mapState({
+      appIsReady: (store) => store.modules.common.appIsReady,
+    }),
+  },
   watch: {
-    isVisible: {
-      handler: this.lockScroll(this.isVisible),
+    appIsReady() {
+      this.lockScroll(!this.appIsReady)
     },
   },
 }
