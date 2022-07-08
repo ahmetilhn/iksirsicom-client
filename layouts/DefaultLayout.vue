@@ -7,6 +7,7 @@
     </main>
     <app-footer />
     <subscribe-modal />
+    <loader-overlay />
   </div>
 </template>
 <script>
@@ -14,6 +15,7 @@ import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
 import SubscribeModal from '~/components/modals/SubscribeModal.vue'
+import LoaderOverlay from '~/components/LoaderOverlay.vue'
 export default {
   name: 'DefaultLayout',
   components: {
@@ -21,6 +23,7 @@ export default {
     AppFooter,
     AppSmallHeader,
     SubscribeModal,
+    LoaderOverlay,
   },
 }
 </script>
