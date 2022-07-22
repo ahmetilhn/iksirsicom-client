@@ -6,12 +6,18 @@
       İyi bir kariyer için, doğru bir başlangıç gerekir. İksirsi'de bir çok dil
       ve teknolojiye ait makaleleri okuyarak yazılım bilgini artırabilirsin.
     </p>
-    <button class="btn-border">Hemen Ara</button>
+    <button class="btn-border" @click="goToScroll(300, '.vertical-listing')">Hemen Başla</button>
   </section>
 </template>
 <script>
+import { goToScroll } from '~/utils/scroll-to.util'
 export default {
   name: 'WelcomeArea',
+  data() {
+    return {
+      goToScroll,
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -30,11 +36,11 @@ export default {
     width: 80px;
 
     @include medium-device {
-      width: 70px
+      width: 70px;
     }
 
     @include small-device {
-      width: 60px
+      width: 60px;
     }
   }
 

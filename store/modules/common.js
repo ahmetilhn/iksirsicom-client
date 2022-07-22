@@ -1,5 +1,11 @@
 export default {
   state: () => ({
-    appIsReady: false,
+    appIsReady: true,
+    subscriptionModalIsVisible: false,
   }),
+  mutations: {
+    setSubscriptionModalVisible(state, payload) {
+      state.subscriptionModalIsVisible = payload
+    },
+  },
 }

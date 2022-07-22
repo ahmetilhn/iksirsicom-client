@@ -1,6 +1,6 @@
 import { mapState } from 'vuex'
 import { SAVED_POSTS_KEY } from '~/constants/localstorage.constants'
-import { getStorage, setStorage } from '~/utils/localStorage.utils'
+import { getStorage, setStorage } from '~/utils/localStorage.util'
 export default {
   data() {
     return {
@@ -29,7 +29,7 @@ export default {
       this.$store.commit('modules/savedItems/setItems', items)
     },
     setIsSaved() {
-      const isItem = this.items.some((item) => item.id === this.postDetail.id)
+      const isItem = this.items?.some((item) => item.id === this.postDetail.id)
       this.isSaved = !!isItem
     },
   },

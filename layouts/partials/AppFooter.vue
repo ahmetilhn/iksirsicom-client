@@ -2,13 +2,28 @@
   <footer class="app-footer flex--column column--middle--center">
     <div class="app-footer__social-links flex--row row--middle--center">
       <a target="BLANK" :href="SOCIAL_LINKS.github.url">
-        <img src="@/assets/img/social/github.svg" :alt="SOCIAL_LINKS.github.title" />
+        <img
+          src="@/assets/img/social/github.svg"
+          :alt="SOCIAL_LINKS.github.title"
+        />
       </a>
       <a target="BLANK" :href="SOCIAL_LINKS.linkedin.url">
-        <img src="@/assets/img/social/linkedin.svg" :alt="SOCIAL_LINKS.linkedin.title" />
+        <img
+          src="@/assets/img/social/linkedin.svg"
+          :alt="SOCIAL_LINKS.linkedin.title"
+        />
       </a>
       <a target="BLANK" :href="SOCIAL_LINKS.whatsapp.url">
-        <img src="@/assets/img/social/whatsapp.svg" :alt="SOCIAL_LINKS.whatsapp.title" />
+        <img
+          src="@/assets/img/social/whatsapp.svg"
+          :alt="SOCIAL_LINKS.whatsapp.title"
+        />
+      </a>
+      <a target="BLANK" @click="openSubscriptionModal">
+        <img
+          src="@/assets/img/social/notification.svg"
+          :alt="SOCIAL_LINKS.whatsapp.title"
+        />
       </a>
     </div>
   </footer>
@@ -19,9 +34,14 @@ export default {
   name: 'AppFooter',
   data() {
     return {
-      SOCIAL_LINKS
+      SOCIAL_LINKS,
     }
-  }
+  },
+  methods: {
+    openSubscriptionModal() {
+      this.$store.commit('modules/common/setSubscriptionModalVisible', true)
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
