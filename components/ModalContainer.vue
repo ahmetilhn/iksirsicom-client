@@ -1,5 +1,8 @@
 <template>
-  <div id="modal_container" class="modal-container flex--row row--middle--center">
+  <div
+    id="modal_container"
+    class="modal-container flex--row row--middle--center"
+  >
     <div class="modal-container__content">
       <slot></slot>
     </div>

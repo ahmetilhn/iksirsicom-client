@@ -10,6 +10,7 @@
     </main>
     <app-footer />
     <subscribe-modal />
+    <saved-items-modal />
     <loader-overlay />
   </div>
 </template>
@@ -19,6 +20,7 @@ import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
 import SubscribeModal from '~/components/modals/SubscribeModal.vue'
+import SavedItemsModal from '~/components/modals/SavedItemsModal.vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
 export default {
   name: 'DefaultLayout',
@@ -27,6 +29,7 @@ export default {
     AppFooter,
     AppSmallHeader,
     SubscribeModal,
+    SavedItemsModal,
     LoaderOverlay,
   },
   computed: {

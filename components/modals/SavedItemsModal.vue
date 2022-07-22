@@ -24,14 +24,14 @@ import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
 import lockScrollMixin from '~/mixins/lock-scroll.mixin';
 export default {
-    name: "SubscribeModal",
+    name: "SavedItemsModal",
     components: {
         ModalContainer
     },
     mixins: [lockScrollMixin],
     computed: {
         ...mapState({
-            isVisible: store => store.modules.common.subscriptionModalIsVisible
+            isVisible: store => store.modules.common.savedItemsModalIsVisible
         })
     },
     watch: {
@@ -47,7 +47,7 @@ export default {
             const self = this;
             window.addEventListener('click', function (e) {
                 if (e.target.id === 'modal_container') {
-                    self.$store.commit('modules/common/setSubscriptionModalVisible', false)
+                    self.$store.commit('modules/common/setSavedItemsModalVisible', false)
                 }
             });
         }
