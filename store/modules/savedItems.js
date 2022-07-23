@@ -11,7 +11,7 @@ export default {
       if (itemIndex > -1) state.items.splice(itemIndex, 1)
     },
     setItems(state, items) {
-      state.items = items
+      state.items = items || []
     },
   },
 }

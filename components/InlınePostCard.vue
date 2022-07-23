@@ -1,0 +1,50 @@
+<template>
+  <article class="inline-post-card flex--column column--middle--left">
+    <nuxt-link to="/post/2">
+      <h2 class="inline-post-card__title">
+        Managing Secrets in Node.js with HashiCorp Vault
+      </h2>
+      <p class="inline-post-card__desc">
+        As the number of services grows in an organization, the problem of
+        secret management only gets worse. Between Zero Trust and the emergence
+        of
+      </p>
+    </nuxt-link>
+  </article>
+</template>
+<script>
+export default {
+  name: 'InlınePostCard',
+  porops: {
+    postDetail: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
+</script>
+<style lang="scss" scoped>
+.inline-post-card {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid $gray-two;
+  &__title {
+    @include golden-text(22);
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  &__desc {
+    @include golden-text(16);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: $dark-two;
+  }
+}
+</style>

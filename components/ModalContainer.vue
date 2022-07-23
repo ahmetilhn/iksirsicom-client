@@ -5,7 +5,7 @@
     class="modal-container flex--row row--middle--center"
   >
     <div
-      class="modal-container__content flex--column column--middle--center border-effect border-effect--no-hover"
+      class="modal-container__content flex--column border-effect border-effect--no-hover"
     >
       <slot></slot>
     </div>
@@ -58,6 +58,7 @@ export default {
 
   &__content {
     max-width: 100%;
+    max-height: 520px;
     width: 600px;
     min-height: 280px;
     background-color: $white;
