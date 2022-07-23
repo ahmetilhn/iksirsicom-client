@@ -1,8 +1,6 @@
 <template>
   <modal-container v-if="isVisible">
-    <div
-      class="subscribe-modal flex--column column--middle--center border-effect border-effect--no-hover"
-    >
+    <div class="subscribe-modal flex--column column--middle--center">
       <div class="subscribe-modal__body">
         <h6>Bültene üye ol!</h6>
         <p>
@@ -56,17 +54,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .subscribe-modal {
-  max-width: 100vw;
-  width: 600px;
+  width: 100%;
   height: 280px;
-  background-color: $white;
-  border-radius: 12px;
-
   @include extra-small-device {
     height: 100%;
-    border-radius: 20px 20px 0 0;
     width: auto;
-    padding: 10px;
   }
 
   &__body {

@@ -3,7 +3,9 @@
     id="modal_container"
     class="modal-container flex--row row--middle--center"
   >
-    <div class="modal-container__content">
+    <div
+      class="modal-container__content flex--column column--middle--center border-effect border-effect--no-hover"
+    >
       <slot></slot>
     </div>
   </div>
@@ -28,11 +30,19 @@ export default {
   }
 
   &__content {
+    max-width: 100vw;
+    width: 600px;
+    min-height: 280px;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 10px;
     @include extra-small-device {
       position: absolute;
-      padding: 0;
       height: 50vh;
       bottom: 0;
+      box-shadow: none;
+      border-radius: 30px 30px 0 0;
+      padding: 14px;
     }
   }
 }
