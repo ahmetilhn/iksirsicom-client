@@ -1,5 +1,5 @@
 <template>
-  <modal-container v-if="isVisible"> </modal-container>
+  <modal-container :is-visible="isVisible"> </modal-container>
 </template>
 <script lang="js">
 

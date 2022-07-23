@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="isVisible"
     id="modal_container"
     class="modal-container flex--row row--middle--center"
   >
@@ -11,8 +12,34 @@
   </div>
 </template>
 <script>
+import lockScrollMixin from '~/mixins/lock-scroll.mixin'
 export default {
   name: 'ModalContainer',
+  mixins: [lockScrollMixin],
+  props: {
+    isVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  watch: {
+    isVisible(newValue, _) {
+      this.lockScroll(newValue)
+    },
+  },
+  mounted() {
+    this.clickOutsideHandler()
+  },
+  methods: {
+    clickOutsideHandler() {
+      const _t = this
+      window.addEventListener('click', function (e) {
+        if (e.target.id === 'modal_container') {
+          _t.$emit('click-outside')
+        }
+      })
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -30,7 +57,7 @@ export default {
   }
 
   &__content {
-    max-width: 100vw;
+    max-width: 100%;
     width: 600px;
     min-height: 280px;
     background-color: $white;

@@ -1,5 +1,5 @@
 <template>
-  <modal-container v-if="isVisible">
+  <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
     <div class="subscribe-modal flex--column column--middle--center">
       <div class="subscribe-modal__body">
         <h6>Bültene üye ol!</h6>
@@ -20,36 +20,21 @@
 
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
-import lockScrollMixin from '~/mixins/lock-scroll.mixin';
 export default {
     name: "SubscribeModal",
     components: {
         ModalContainer
     },
-    mixins: [lockScrollMixin],
     computed: {
         ...mapState({
             isVisible: store => store.modules.common.subscriptionModalIsVisible
         })
     },
-    watch: {
-        isVisible(newValue, _) {
-            this.lockScroll(newValue)
-        }
-    },
-    mounted() {
-        this.clickOutsideHandler();
-    },
     methods: {
-        clickOutsideHandler() {
-            const self = this;
-            window.addEventListener('click', function (e) {
-                if (e.target.id === 'modal_container') {
-                    self.$store.commit('modules/common/setSubscriptionModalVisible', false)
-                }
-            });
-        }
-    },
+      clickOutsideHandler(){
+        this.$store.commit('modules/common/setSubscriptionModalVisible', false)
+      }
+    }
 }
 </script>
 <style lang="scss" scoped>
