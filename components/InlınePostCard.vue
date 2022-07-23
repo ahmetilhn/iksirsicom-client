@@ -2,12 +2,10 @@
   <article class="inline-post-card flex--column column--middle--left">
     <nuxt-link to="/post/2">
       <h2 class="inline-post-card__title">
-        Managing Secrets in Node.js with HashiCorp Vault
+        {{ postDetail.title }}
       </h2>
       <p class="inline-post-card__desc">
-        As the number of services grows in an organization, the problem of
-        secret management only gets worse. Between Zero Trust and the emergence
-        of
+        {{ postDetail.description }}
       </p>
     </nuxt-link>
   </article>
@@ -15,7 +13,7 @@
 <script>
 export default {
   name: 'InlınePostCard',
-  porops: {
+  props: {
     postDetail: {
       type: Object,
       default: () => {},

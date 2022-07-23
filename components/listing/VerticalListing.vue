@@ -11,6 +11,7 @@ import PostCard from '../PostCard.vue'
 
 export default {
   name: 'VerticalListing',
+  components: { PostCard },
   data() {
     return {
       items: [
@@ -54,7 +55,6 @@ export default {
       ],
     }
   },
-  components: { PostCard },
 }
 </script>
 <style lang="scss" scoped>

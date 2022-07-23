@@ -15,16 +15,11 @@
     <div class="post-card__body">
       <nuxt-link :to="'post/' + postDetail.id">
         <h2 class="post-card__title">
-          Managing Secrets in Node.js with HashiCorp Vault
+          {{ postDetail.title }}
         </h2>
       </nuxt-link>
       <p class="post-card__desc">
-        As the number of services grows in an organization, the problem of
-        secret management only gets worse. Between Zero Trust and the emergence
-        of microservices, handling secrets such as tokens, credentials, and keys
-        has become an increasingly challenging task. That’s where a solution
-        like HashiCorp’s Vault can help organizations solve their secret
-        management woes.
+        {{ postDetail.description }}
       </p>
     </div>
     <div class="post-card__info flex--row row--middle--center">
@@ -89,6 +84,7 @@ export default {
 
   &__body {
     width: 100%;
+    height: 188px;
     padding: 10px 0;
   }
 

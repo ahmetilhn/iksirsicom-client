@@ -1,7 +1,11 @@
 <template>
   <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
     <div class="items flex--column column--top--left">
-      <inline-post-card v-for="item in 5" :key="item" />
+      <inline-post-card
+        v-for="item in savedItems"
+        :key="item.id"
+        :postDetail="item"
+      />
     </div>
   </modal-container>
 </template>
@@ -18,7 +22,8 @@ export default {
     },
     computed: {
         ...mapState({
-            isVisible: store => store.modules.common.savedItemsModalIsVisible
+            isVisible: store => store.modules.common.savedItemsModalIsVisible,
+            savedItems: store => store.modules.savedItems.items
         })
     },
     methods: {
