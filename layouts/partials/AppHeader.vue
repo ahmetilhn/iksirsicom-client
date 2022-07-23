@@ -5,11 +5,21 @@
         <img src="@/assets/img/logo.svg" alt="iksirsi Logo" />
       </nuxt-link>
       <div class="app-header__buttons flex--row row--middle--center">
-        <button class="btn-border">Listem</button>
+        <button class="btn-border" @click="openSavedList">Listem</button>
       </div>
     </div>
   </header>
 </template>
+<script>
+export default {
+  name: 'AppHeader',
+  methods: {
+    openSavedList() {
+      this.$store.commit('modules/common/setSavedItemsModalVisible', true)
+    },
+  },
+}
+</script>
 <style lang="scss" scoped>
 .app-header {
   width: 100vw;
@@ -47,7 +57,6 @@
     img {
       height: 80%;
     }
-
   }
 }
 </style>

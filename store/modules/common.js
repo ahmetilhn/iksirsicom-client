@@ -2,7 +2,7 @@ export default {
   state: () => ({
     appIsReady: true,
     subscriptionModalIsVisible: false,
-    savedItemsModalIsVisible: true,
+    savedItemsModalIsVisible: false,
   }),
   mutations: {
     setSubscriptionModalVisible(state, payload) {
