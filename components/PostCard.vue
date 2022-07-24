@@ -13,7 +13,7 @@
       <placeholder-image v-else />
     </div>
     <div class="post-card__body">
-      <nuxt-link :to="'post/' + postDetail.id">
+      <nuxt-link :to="'post/' + postDetail._id">
         <h2 class="post-card__title">
           {{ postDetail.title }}
         </h2>

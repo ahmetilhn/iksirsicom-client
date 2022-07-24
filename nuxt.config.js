@@ -1,5 +1,9 @@
 import { resolve } from 'path'
 export default {
+  loading: {
+    color: '#252529',
+    height: '3px'
+  },
   alias: {
     '@': resolve(__dirname, './'),
   },
