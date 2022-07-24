@@ -1,29 +1,28 @@
 <template>
   <section class="post-detail-content">
     <div class="post-detail-content__header">
-      <h1>Import a HTML file and watch it magically convert to Markdown</h1>
+      <h1>{{ postDetail.title }}</h1>
       <h2>
-        This text you see here is *actually- written in Markdown! To get a feel
-        for Markdown's syntax, type some text into the left window and watch the
-        results in the right.This text you see here is *actually- written in
-        Markdown! To get a feel for Markdown's syntax, type some text into the
-        left window and watch the results in the right.
+        {{ postDetail.description }}
       </h2>
-      <post-detail-info />
+      <post-detail-info :info="postDetail.info" />
       <div
         class="post-detail-content__poster flex--column column--middle--center"
       >
-        <figure v-if="true" class="flex--column column--middle--center">
-          <img src="https://i.imgur.com/6xrqbvr.jpeg" alt="" />
+        <figure
+          v-if="postDetail.poster"
+          class="flex--column column--middle--center"
+        >
+          <img :src="postDetail.poster" alt="" />
           <figcaption>Photo Title</figcaption>
         </figure>
-        <placeholder-image v-if="false" />
+        <placeholder-image v-else />
       </div>
     </div>
     <article class="post-detail-content__html" v-html="htmlContent()"></article>
     <hr class="hr-line" />
     <div class="post-detail-content__actions flex--row row--middle--center">
-      <post-tags />
+      <post-tags :tags="postDetail.tags" />
       <like-box />
     </div>
   </section>

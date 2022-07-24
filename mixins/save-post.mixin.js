@@ -29,7 +29,7 @@ export default {
       this.$store.commit('modules/savedItems/setItems', items)
     },
     setIsSaved() {
-      const isItem = this.items?.some((item) => item.id === this.postDetail.id)
+      const isItem = this.items?.some((item) => item._id === this.postDetail._id)
       this.isSaved = !!isItem
     },
   },

@@ -15,7 +15,7 @@ export default {
     VerticalListing,
   },
   layout: 'DefaultLayout',
-  async fetch({ store }) {
+  async asyncData({ store }) {
     await store.dispatch('modules/posts/getAllPosts')
   },
 }
