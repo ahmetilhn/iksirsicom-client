@@ -1,6 +1,6 @@
 <template>
   <article class="inline-post-card flex--column column--middle--left">
-    <nuxt-link to="/post/2">
+    <nuxt-link :to="'/post/' + postDetail._id">
       <h2 class="inline-post-card__title">
         {{ postDetail.title }}
       </h2>
