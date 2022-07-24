@@ -1,6 +1,8 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
+    <div class="vertical-listing__items flex--row row--middle--left">
+      <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
+    </div>
     <div class="vertical-listing__bottom flex--row row--middle--center">
       <button class="btn-border">Daha fazla gör</button>
     </div>
@@ -24,8 +26,6 @@ export default {
   max-width: 1280px;
   padding: 50px 0;
   flex-wrap: wrap;
-  justify-content: space-between;
-
   @include large-device {
     padding: 50px $padding-one;
   }
@@ -40,24 +40,25 @@ export default {
 
   ::v-deep {
     .post-card {
-      width: calc(33.33% - 10px);
-
+      width: calc(33.33% - 16px);
+      margin: 8px;
       @include medium-device {
-        width: calc(50% - 5px);
-        margin-bottom: 10px;
+        width: calc(50% - 16px);
       }
-
       @include extra-small-device {
         width: 100%;
+        margin: 10px 0;
       }
-
-      margin-bottom: 20px;
     }
   }
 
   &__bottom {
     margin-top: 40px;
     width: 100%;
+  }
+  &__items {
+    width: 100%;
+    flex-wrap: wrap;
   }
 }
 </style>

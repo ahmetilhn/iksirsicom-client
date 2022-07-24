@@ -5,12 +5,12 @@
     <save-box :isSaved="isSaved" @saveClick="saveClickHandler(postDetail)" />
     <div class="post-card__img flex--row row--middle--center">
       <img
-        v-if="false"
+        v-if="postDetail.poster"
         class="post-card__img--original"
-        src="https://www.bleepstatic.com/content/hl-images/2017/03/09/JavaScript.jpg"
+        :src="postDetail.poster"
       />
       <!---For not image-->
-      <placeholder-image v-if="true" />
+      <placeholder-image v-else />
     </div>
     <div class="post-card__body">
       <nuxt-link :to="'post/' + postDetail.id">
@@ -25,9 +25,9 @@
     <div class="post-card__info flex--row row--middle--center">
       <span>2 DK'lık okuma</span>
       <div class="post-card__tags">
-        <nuxt-link to="">Javascript</nuxt-link>
-        <nuxt-link to="">Nodejs</nuxt-link>
-        <nuxt-link to="">RestAPI</nuxt-link>
+        <nuxt-link to="" v-for="tag in postDetail.tags" :key="tag">
+          {{ tag }}
+        </nuxt-link>
       </div>
     </div>
   </article>
