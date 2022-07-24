@@ -16,5 +16,9 @@ export default {
         commit('setPosts', res.data)
       }
     },
+    async getPostById({ _ }, id) {
+      const res = await postService.getPostById(id)
+      if (res) return res
+    },
   },
 }
