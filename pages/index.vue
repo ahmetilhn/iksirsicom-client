@@ -15,6 +15,9 @@ export default {
     VerticalListing,
   },
   layout: 'DefaultLayout',
+  async fetch({ store }) {
+    await store.dispatch('modules/posts/getAllPosts')
+  },
 }
 </script>
 <style lang="scss" scoped>

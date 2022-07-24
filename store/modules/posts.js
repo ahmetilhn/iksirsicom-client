@@ -4,9 +4,17 @@ export default {
   state: () => ({
     posts: [],
   }),
+  mutations: {
+    setPosts(state, payload) {
+      state.posts = payload
+    },
+  },
   actions: {
-    async getAllPosts() {
-      await postService.getAllPosts()
+    async getAllPosts({ _, commit }) {
+      const res = await postService.getAllPosts()
+      if (res) {
+        commit('setPosts', res.data)
+      }
     },
   },
 }

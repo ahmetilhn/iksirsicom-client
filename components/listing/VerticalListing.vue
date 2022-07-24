@@ -1,32 +1,21 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <post-card :postDetail="item" v-for="item in items" :key="item.id" />
+    <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
     <div class="vertical-listing__bottom flex--row row--middle--center">
       <button class="btn-border">Daha fazla gör</button>
     </div>
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapState } from 'vuex'
 import PostCard from '../PostCard.vue'
 export default {
   name: 'VerticalListing',
   components: { PostCard },
-  data() {
-    return {
-      items: [],
-    }
-  },
-  fetch(context) {
-    context.getAllPosts()
-  },
-  methods: {
-    ...mapActions({
-      getAllPosts: 'modules/posts/getAllPosts',
+  computed: {
+    ...mapState({
+      posts: (store) => store.modules.posts.posts,
     }),
-  },
-  mounted() {
-    this.getAllPosts()
   },
 }
 </script>
