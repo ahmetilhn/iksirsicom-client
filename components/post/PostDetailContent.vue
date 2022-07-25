@@ -87,6 +87,7 @@ export default {
     min-height: 400px;
 
     figure {
+    width: 100%;
       img {
         width: 100%;
       }
