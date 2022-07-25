@@ -23,7 +23,7 @@
     <hr class="hr-line" />
     <div class="post-detail-content__actions flex--row row--middle--center">
       <post-tags :tags="postDetail.tags" />
-      <like-box />
+      <like-box :like-count="postDetail.info.like" :post-id="postDetail._id" />
     </div>
   </section>
 </template>

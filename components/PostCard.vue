@@ -1,7 +1,7 @@
 <template>
   <article class="post-card border-effect">
     <!---Like area-->
-    <like-box />
+    <like-box :like-count="postDetail.info.like" :post-id="postDetail._id" />
     <save-box :isSaved="isSaved" @saveClick="saveClickHandler(postDetail)" />
     <div class="post-card__img flex--row row--middle--center">
       <img
