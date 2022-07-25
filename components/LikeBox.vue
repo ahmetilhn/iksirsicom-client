@@ -35,9 +35,7 @@ export default {
   },
   methods: {
     async like() {
-      if (this.isLike) {
-        this.isLike = false
-      } else {
+      if (!this.isLike) {
         await likeService.createLike(this.postId)
         this.isLike = true
       }
