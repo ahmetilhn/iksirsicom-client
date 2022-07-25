@@ -1,10 +1,12 @@
 <template>
-  <div
-    v-if="!appIsReady"
-    class="loader-overlay flex--column column--middle--center"
-  >
-    <img src="@/assets/img/logo-animation.svg" alt="" />
-  </div>
+  <transition>
+    <div
+      v-show="!appIsReady"
+      class="loader-overlay flex--column column--middle--center"
+    >
+      <img src="@/assets/img/logo-animation.svg" alt="" />
+    </div>
+  </transition>
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -31,7 +33,11 @@ export default {
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: $white;
+  background-color: rgba(255, 255, 255, 0.583);
   z-index: 23232323323;
+  img {
+    width: 60px;
+    height: 60px;
+  }
 }
 </style>

@@ -2,10 +2,7 @@
   <div class="default-layout flex--column column--middle--center">
     <app-small-header />
     <app-header />
-    <main
-      v-if="appIsReady"
-      class="default-layout__content flex--column column--middle--center"
-    >
+    <main class="default-layout__content flex--column column--middle--center">
       <Nuxt />
     </main>
     <app-footer />
@@ -15,7 +12,6 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
 import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
@@ -31,9 +27,6 @@ export default {
     SubscribeModal,
     SavedItemsModal,
     LoaderOverlay,
-  },
-  computed: {
-    ...mapState({ appIsReady: (store) => store.modules.common.appIsReady }),
   },
 }
 </script>

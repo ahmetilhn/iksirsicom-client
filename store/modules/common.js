@@ -5,6 +5,9 @@ export default {
     savedItemsModalIsVisible: false,
   }),
   mutations: {
+    setAppIsReady(state, payload) {
+      state.appIsReady = payload
+    },
     setSubscriptionModalVisible(state, payload) {
       state.subscriptionModalIsVisible = payload
     },

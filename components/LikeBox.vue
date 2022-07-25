@@ -36,7 +36,9 @@ export default {
   methods: {
     async like() {
       if (!this.isLike) {
+        this.$store.commit('modules/common/setAppIsReady', false)
         await likeService.createLike(this.postId)
+        this.$store.commit('modules/common/setAppIsReady', true)
         this.isLike = true
       }
     },
