@@ -1,9 +1,9 @@
 <template>
   <div class="post-detail-info flex--row row--middle--center">
     <p class="post-detail-info__author">
-      Author: <strong> {{ info.author.full_name }} </strong>
+      <strong> {{ author.full_name }} </strong> | {{ readingTime }} Dk
     </p>
-    <view-box />
+    <view-box :view-count="viewCount" />
   </div>
 </template>
 <script>
@@ -14,8 +14,16 @@ export default {
     ViewBox,
   },
   props: {
-    info: {
+    author: {
       type: Object,
+      required: true,
+    },
+    readingTime: {
+      type: Number,
+      required: true,
+    },
+    viewCount: {
+      type: Number || String,
       required: true,
     },
   },

@@ -5,7 +5,7 @@
       <h2>
         {{ postDetail.description }}
       </h2>
-      <post-detail-info :info="postDetail.info" />
+      <post-detail-info :author="postDetail.info.author" :reading-time="postDetail.reading_time"  :view-count="postDetail.info.view"/>
       <div
         class="post-detail-content__poster flex--column column--middle--center"
       >
