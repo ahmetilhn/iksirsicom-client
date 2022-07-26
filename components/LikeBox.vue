@@ -11,7 +11,7 @@
         fill="white"
       />
     </svg>
-    <p>{{ likeCount }}</p>
+    <p>{{ count }}</p>
   </div>
 </template>
 <script>
@@ -31,15 +31,19 @@ export default {
   data() {
     return {
       isLike: false,
+      count: this.likeCount,
     }
   },
   methods: {
     async like() {
       if (!this.isLike) {
         this.$store.commit('modules/common/setAppIsReady', false)
-        await likeService.createLike(this.postId)
+        const res = await likeService.createLike(this.postId)
+        if (res) {
+          this.isLike = true
+          this.count++
+        }
         this.$store.commit('modules/common/setAppIsReady', true)
-        this.isLike = true
       }
     },
   },
