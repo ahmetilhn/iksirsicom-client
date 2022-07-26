@@ -14,7 +14,7 @@ export default {
   name: 'ViewBox',
   props: {
     viewCount: {
-      type: String || Number,
+      type: Number,
       required: true,
     },
   },

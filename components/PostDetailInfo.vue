@@ -23,7 +23,7 @@ export default {
       required: true,
     },
     viewCount: {
-      type: Number || String,
+      type: Number,
       required: true,
     },
   },
