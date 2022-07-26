@@ -10,8 +10,13 @@
         </p>
       </div>
       <div class="subscribe-modal__form flex--row row--middle--center">
-        <input class="input border-effect" type="text" placeholder="E-posta" />
-        <button class="btn-border">Kaydol</button>
+        <input
+          class="input border-effect"
+          v-model="email"
+          type="text"
+          placeholder="E-posta"
+        />
+        <button class="btn-border" @click="sendSubscription">Kaydol</button>
       </div>
     </div>
   </modal-container>
@@ -20,10 +25,16 @@
 
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
+import subscriptionService from '~/services/subscription.service';
 export default {
     name: "SubscribeModal",
     components: {
         ModalContainer
+    },
+    data(){
+    return{
+    email: ""
+    }
     },
     computed: {
         ...mapState({
@@ -33,6 +44,14 @@ export default {
     methods: {
       clickOutsideHandler(){
         this.$store.commit('modules/common/setSubscriptionModalVisible', false)
+      },
+      async sendSubscription(){
+         this.$store.commit("modules/common/setAppIsReady", false)
+         const res = await subscriptionService.createSubscription(this.email);
+         if(res) {
+         this.$store.commit('modules/common/setSubscriptionModalVisible', false)
+         }
+         this.$store.commit("modules/common/setAppIsReady", true)
       }
     }
 }
