@@ -5,7 +5,8 @@
         <inline-post-card
           v-for="item in savedItems"
           :key="item.id"
-          :postDetail="item"
+          :post-detail="item"
+          @link-click="linkClickHandler"
         />
       </div>
     </template>
@@ -36,6 +37,9 @@ export default {
     methods: {
       clickOutsideHandler(){
         this.$store.commit('modules/common/setSavedItemsModalVisible', false)
+      },
+      linkClickHandler(){
+           this.$store.commit('modules/common/setSavedItemsModalVisible', false)
       }
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <article class="inline-post-card flex--column column--middle--left">
-    <nuxt-link :to="'/post/' + postDetail._id">
+    <nuxt-link :to="'/post/' + postDetail._id" @click.native="linkClick">
       <h2 class="inline-post-card__title">
         {{ postDetail.title }}
       </h2>
@@ -17,6 +17,11 @@ export default {
     postDetail: {
       type: Object,
       default: () => {},
+    },
+  },
+  methods: {
+    linkClick() {
+      this.$emit('link-click')
     },
   },
 }
