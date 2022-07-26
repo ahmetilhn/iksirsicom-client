@@ -16,7 +16,9 @@ export default {
   },
   layout: 'DefaultLayout',
   async asyncData({ store }) {
+    store.commit('modules/common/setAppIsReady', false)
     await store.dispatch('modules/posts/getAllPosts')
+    store.commit('modules/common/setAppIsReady', true)
   },
 }
 </script>
