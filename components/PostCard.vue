@@ -24,7 +24,7 @@
       </p>
     </div>
     <div class="post-card__info flex--row row--middle--center">
-      <span>2 DK'lık okuma</span>
+      <span>{{ postDetail.reading_time }} Dakika</span>
       <div class="post-card__tags">
         <nuxt-link to="" v-for="tag in postDetail.tags" :key="tag">
           {{ tag }}
