@@ -1,7 +1,9 @@
 import baseHTTP from './base.service'
 
-const getAllPosts = async () => {
-  const res = await baseHTTP.get('/posts')
+const getAllPosts = async (query) => {
+  const res = await baseHTTP.get('/posts', {
+    params: query,
+  })
   if (res) return res
 }
 const getPostById = async (id) => {

@@ -5,7 +5,7 @@
         <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
       </div>
       <div class="vertical-listing__bottom flex--row row--middle--center">
-        <button class="btn-border">Daha fazla gör</button>
+        <button class="btn-border" @click="getData">Daha fazla gör</button>
       </div>
     </template>
     <template v-else>
@@ -20,10 +20,25 @@ import NotResult from '../results/NotResult.vue'
 export default {
   name: 'VerticalListing',
   components: { PostCard, NotResult },
+  data() {
+    return {
+      limit: 6,
+    }
+  },
   computed: {
     ...mapState({
       posts: (store) => store.modules.posts.posts,
     }),
+  },
+  methods: {
+    async getData() {
+      this.$store.commit('modules/common/setAppIsReady', false)
+      await this.$store.dispatch('modules/posts/getAllPosts', {
+        limit: this.limit,
+      })
+      this.$store.commit('modules/common/setAppIsReady', true)
+      this.limit = this.limit + 3
+    },
   },
 }
 </script>

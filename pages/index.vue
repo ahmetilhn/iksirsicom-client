@@ -17,7 +17,7 @@ export default {
   layout: 'DefaultLayout',
   async asyncData({ store }) {
     store.commit('modules/common/setAppIsReady', false)
-    await store.dispatch('modules/posts/getAllPosts')
+    await store.dispatch('modules/posts/getAllPosts', {limit: 3})
     store.commit('modules/common/setAppIsReady', true)
   },
 }

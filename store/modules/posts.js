@@ -10,8 +10,8 @@ export default {
     },
   },
   actions: {
-    async getAllPosts({ _, commit }) {
-      const res = await postService.getAllPosts()
+    async getAllPosts({ _, commit }, query) {
+      const res = await postService.getAllPosts(query)
       if (res) {
         commit('setPosts', res.data)
       }
