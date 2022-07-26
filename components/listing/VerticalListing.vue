@@ -1,19 +1,25 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <div class="vertical-listing__items flex--row row--middle--left">
-      <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
-    </div>
-    <div class="vertical-listing__bottom flex--row row--middle--center">
-      <button class="btn-border">Daha fazla gör</button>
-    </div>
+    <template v-if="!posts.length">
+      <div class="vertical-listing__items flex--row row--middle--left">
+        <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
+      </div>
+      <div class="vertical-listing__bottom flex--row row--middle--center">
+        <button class="btn-border">Daha fazla gör</button>
+      </div>
+    </template>
+    <template v-else>
+      <not-result />
+    </template>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 import PostCard from '../PostCard.vue'
+import NotResult from '../results/NotResult.vue'
 export default {
   name: 'VerticalListing',
-  components: { PostCard },
+  components: { PostCard, NotResult },
   computed: {
     ...mapState({
       posts: (store) => store.modules.posts.posts,
@@ -26,6 +32,7 @@ export default {
   max-width: 1280px;
   padding: 50px 0;
   flex-wrap: wrap;
+  min-height: 500px;
   @include large-device {
     padding: 50px $padding-one;
   }
