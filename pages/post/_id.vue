@@ -5,6 +5,7 @@
 </template>
 <script>
 import PostDetailContent from '@/components/post/PostDetailContent.vue'
+import viewService from '~/services/view.service'
 export default {
   name: 'PostDetail',
   components: { PostDetailContent },
@@ -16,6 +17,7 @@ export default {
       params.id
     )
     if (data) {
+      viewService.createView(params.id)
       store.commit('modules/common/setAppIsReady', true)
       return {
         data,
