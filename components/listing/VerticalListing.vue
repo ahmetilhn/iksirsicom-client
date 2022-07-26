@@ -1,6 +1,6 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <template v-if="!posts.length">
+    <template v-if="posts.length">
       <div class="vertical-listing__items flex--row row--middle--left">
         <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
       </div>

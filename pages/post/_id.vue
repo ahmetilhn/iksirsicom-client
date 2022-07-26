@@ -10,11 +10,13 @@ export default {
   components: { PostDetailContent },
   layout: 'DefaultLayout',
   async asyncData({ store, params }) {
+    store.commit('modules/common/setAppIsReady', false)
     const { data } = await store.dispatch(
       'modules/posts/getPostById',
       params.id
     )
     if (data) {
+      store.commit('modules/common/setAppIsReady', true)
       return {
         data,
       }
