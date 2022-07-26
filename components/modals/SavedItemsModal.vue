@@ -1,12 +1,17 @@
 <template>
   <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
-    <div class="items flex--column column--top--left">
-      <inline-post-card
-        v-for="item in savedItems"
-        :key="item.id"
-        :postDetail="item"
-      />
-    </div>
+    <template v-if="savedItems.length">
+      <div class="items flex--column column--top--left">
+        <inline-post-card
+          v-for="item in savedItems"
+          :key="item.id"
+          :postDetail="item"
+        />
+      </div>
+    </template>
+    <template v-else>
+      <not-result />
+    </template>
   </modal-container>
 </template>
 <script lang="js">
@@ -14,11 +19,13 @@
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
 import InlinePostCard from '../InlınePostCard.vue';
+import NotResult from '../results/NotResult.vue';
 export default {
     name: "SavedItemsModal",
     components: {
         ModalContainer,
-        InlinePostCard
+        InlinePostCard,
+        NotResult
     },
     computed: {
         ...mapState({
@@ -39,5 +46,8 @@ export default {
   padding: 10px 20px;
   height: 100%;
   overflow-y: scroll;
+}
+::v-deep .not-result {
+  min-height: 280px;
 }
 </style>
