@@ -21,7 +21,7 @@ export default {
     },
     methods: {
       clickOutsideHandler(){
-        this.$store.commit('modules/common/setSavedItemsModalVisible', false)
+        this.$store.commit('modules/common/setAuthorsModalVisible', false)
       },
     }
 }

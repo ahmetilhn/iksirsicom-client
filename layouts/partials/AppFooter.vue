@@ -1,7 +1,7 @@
 <template>
   <footer class="app-footer flex--column column--middle--center">
     <div class="app-footer__social-links flex--row row--middle--center">
-      <a target="BLANK" @click="openSubscriptionModal">
+      <a target="BLANK" @click="openAuthorsModal">
         <img
           src="@/assets/img/social/user.svg"
           :alt="SOCIAL_LINKS.whatsapp.title"
@@ -28,6 +28,9 @@ export default {
   methods: {
     openSubscriptionModal() {
       this.$store.commit('modules/common/setSubscriptionModalVisible', true)
+    },
+    openAuthorsModal() {
+      this.$store.commit('modules/common/setAuthorsModalVisible', true)
     },
   },
 }

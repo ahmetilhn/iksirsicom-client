@@ -15,5 +15,8 @@ export default {
     setSavedItemsModalVisible(state, payload) {
       state.savedItemsModalIsVisible = payload
     },
+    setAuthorsModalVisible(state, payload) {
+      state.authorsModalIsVisible = payload
+    },
   },
 }
