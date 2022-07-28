@@ -8,6 +8,7 @@
     <app-footer />
     <subscribe-modal />
     <saved-items-modal />
+    <authors-modal />
     <loader-overlay />
   </div>
 </template>
@@ -17,6 +18,7 @@ import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
 import SubscribeModal from '~/components/modals/SubscribeModal.vue'
 import SavedItemsModal from '~/components/modals/SavedItemsModal.vue'
+import AuthorsModal from '~/components/modals/AuthorsModal.vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
 export default {
   name: 'DefaultLayout',
@@ -27,6 +29,7 @@ export default {
     SubscribeModal,
     SavedItemsModal,
     LoaderOverlay,
+    AuthorsModal,
   },
 }
 </script>
