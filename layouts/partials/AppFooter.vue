@@ -54,7 +54,6 @@ export default {
       align-items: center;
       margin: 0 5px;
       border: 1px solid $dark-one;
-
       img {
         height: 18px;
       }
