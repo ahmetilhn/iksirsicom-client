@@ -16,7 +16,13 @@
           type="text"
           placeholder="E-posta"
         />
-        <button class="btn-border" @click="sendSubscription">Kaydol</button>
+        <button
+          class="btn-border"
+          :disabled="!email.length"
+          @click="sendSubscription"
+        >
+          Kaydol
+        </button>
       </div>
     </div>
   </modal-container>
@@ -26,6 +32,7 @@
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
 import subscriptionService from '~/services/subscription.service';
+import { EMAIL_REGEX } from "~/constants/regex.constants"
 export default {
     name: "SubscribeModal",
     components: {
@@ -33,7 +40,7 @@ export default {
     },
     data(){
     return{
-    email: ""
+      email: ""
     }
     },
     computed: {
@@ -46,12 +53,17 @@ export default {
         this.$store.commit('modules/common/setSubscriptionModalVisible', false)
       },
       async sendSubscription(){
+         if(this.email.match(EMAIL_REGEX)) {
          this.$store.commit("modules/common/setAppIsReady", false)
          const res = await subscriptionService.createSubscription(this.email);
          if(res) {
          this.$store.commit('modules/common/setSubscriptionModalVisible', false)
          }
          this.$store.commit("modules/common/setAppIsReady", true)
+         }
+         else {
+          alert("Lütfen bir e-posta giriniz")
+         }
       }
     }
 }

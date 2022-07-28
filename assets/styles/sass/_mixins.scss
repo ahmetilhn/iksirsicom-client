@@ -1,5 +1,5 @@
 //font size mixin px to rem root size 16px
-$golden-raito: 1.618;
+$golden-raito: 1.718;
 @mixin golden-text($fontSize) {
   font-size: ($fontSize / 16) + rem;
   line-height: (($fontSize / 16) * $golden-raito) + rem;

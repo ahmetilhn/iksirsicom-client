@@ -3,9 +3,13 @@
   outline: none;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $roboto-slab;
   font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   color: $dark-one;
+}
+:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

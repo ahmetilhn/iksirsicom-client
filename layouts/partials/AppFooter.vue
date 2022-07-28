@@ -1,21 +1,9 @@
 <template>
   <footer class="app-footer flex--column column--middle--center">
     <div class="app-footer__social-links flex--row row--middle--center">
-      <a target="BLANK" :href="SOCIAL_LINKS.github.url">
+      <a target="BLANK" @click="openSubscriptionModal">
         <img
-          src="@/assets/img/social/github.svg"
-          :alt="SOCIAL_LINKS.github.title"
-        />
-      </a>
-      <a target="BLANK" :href="SOCIAL_LINKS.linkedin.url">
-        <img
-          src="@/assets/img/social/linkedin.svg"
-          :alt="SOCIAL_LINKS.linkedin.title"
-        />
-      </a>
-      <a target="BLANK" :href="SOCIAL_LINKS.whatsapp.url">
-        <img
-          src="@/assets/img/social/whatsapp.svg"
+          src="@/assets/img/social/user.svg"
           :alt="SOCIAL_LINKS.whatsapp.title"
         />
       </a>
