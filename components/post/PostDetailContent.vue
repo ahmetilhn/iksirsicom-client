@@ -5,7 +5,11 @@
       <h2>
         {{ postDetail.description }}
       </h2>
-      <post-detail-info :author="postDetail.info.author" :reading-time="postDetail.reading_time"  :view-count="postDetail.info.view"/>
+      <post-detail-info
+        :author="postDetail.info.author"
+        :reading-time="postDetail.reading_time"
+        :view-count="postDetail.info.view"
+      />
       <div
         class="post-detail-content__poster flex--column column--middle--center"
       >
@@ -46,9 +50,9 @@ export default {
   },
   methods: {
     htmlContent() {
-      if (process.client && atob) {
-        const output = atob(this.postDetail.content)
-        return output
+      if (process.client && Buffer) {
+        const output = Buffer.from(this.postDetail.content, 'base64')
+        return output.toString()
       }
     },
   },
@@ -87,7 +91,7 @@ export default {
     min-height: 400px;
 
     figure {
-    width: 100%;
+      width: 100%;
       img {
         width: 100%;
       }
