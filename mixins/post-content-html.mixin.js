@@ -11,7 +11,7 @@ export default {
               htmlElem.innerHTML = elem.text
               break
             case 'img':
-              htmlElem.src = elem.imgSource;
+              htmlElem.src = elem.img_source;
               break;
             default:
               htmlElem.innerHTML = elem.text
