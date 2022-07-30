@@ -103,23 +103,27 @@ export default {
   }
 
   &__html {
+    $commonMargin: 30px;
     a {
       color: $primary-color;
     }
     img {
       width: 100%;
+      margin-bottom: $commonMargin;
     }
     code {
       width: 100%;
-      background-color: rgb(240, 240, 240);
+      background-color: $dark-one;
+      color: $white;
       display: block;
       padding: 30px;
+      margin-bottom: $commonMargin;
       border-radius: 4px;
     }
     p,
     span {
       display: block;
-      padding: 30px 0;
+      margin-bottom: $commonMargin;
       @include golden-text(18);
 
       @include small-device {
@@ -134,7 +138,7 @@ export default {
     h6 {
       font-weight: 500;
       display: block;
-      padding: 20px 0;
+      margin-bottom: $commonMargin;
     }
     h1 {
       @include golden-text(32);
