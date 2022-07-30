@@ -3,7 +3,7 @@ export default {
     appIsReady: true,
     subscriptionModalIsVisible: false,
     savedItemsModalIsVisible: false,
-    authorsModalIsVisible: true,
+    authorsModalIsVisible: false,
   }),
   mutations: {
     setAppIsReady(state, payload) {

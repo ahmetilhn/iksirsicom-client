@@ -23,7 +23,7 @@
         <placeholder-image v-else />
       </div>
     </div>
-    <article class="post-detail-content__html" v-html="htmlContent()"></article>
+    <article id="post_detail_content" class="post-detail-content__html"></article>
     <hr class="hr-line" />
     <div class="post-detail-content__actions flex--row row--middle--center">
       <post-tags :tags="postDetail.tags" />
@@ -36,9 +36,11 @@ import PostDetailInfo from '~/components/PostDetailInfo.vue'
 import PlaceholderImage from '~/components/PlaceholderImage.vue'
 import LikeBox from '~/components/LikeBox.vue'
 import PostTags from '~/components/PostTags.vue'
+import postContentHtmlMixin from '~/mixins/post-content-html.mixin'
 export default {
   name: 'PostDetailContent',
   components: { PostDetailInfo, PlaceholderImage, LikeBox, PostTags },
+  mixins: [postContentHtmlMixin],
   props: {
     postDetail: {
       type: Object,
@@ -46,15 +48,7 @@ export default {
     },
   },
   mounted() {
-    this.htmlContent()
-  },
-  methods: {
-    htmlContent() {
-      if (process.client && Buffer) {
-        const output = Buffer.from(this.postDetail.content, 'base64')
-        return output.toString()
-      }
-    },
+    this.createHtmlElements(this.postDetail.content)
   },
 }
 </script>
