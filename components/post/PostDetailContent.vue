@@ -119,6 +119,7 @@ export default {
       padding: 30px;
       margin-bottom: $commonMargin;
       border-radius: 4px;
+      @include golden-text(16);
     }
     p,
     span {
