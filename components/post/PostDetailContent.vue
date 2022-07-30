@@ -9,6 +9,7 @@
         :author="postDetail.info.author"
         :reading-time="postDetail.reading_time"
         :view-count="postDetail.info.view"
+        :medium-link="postDetail.medium_link"
       />
       <div
         class="post-detail-content__poster flex--column column--middle--center"

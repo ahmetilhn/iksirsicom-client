@@ -1,14 +1,17 @@
 <template>
   <div class="post-detail-info flex--row row--middle--center">
     <div class="post-detail-info__left flex--row row--middle--center">
-      <a href="author.social">
+      <a href="">
         <img :src="author.avatar" :alt="author.full_name" />
       </a>
       <div class="post-detail-info__text flex--column column--top-left">
-        <p class="post-detail-info__author">
+        <p>
           <strong> {{ author.full_name }} </strong>
         </p>
-        <span>{{ readingTime }} Dk</span>
+        <div class="flex--row">
+          <a v-if="mediumLink" :href="mediumLink">Medium'da oku</a>
+          <span>{{ readingTime }} Dk</span>
+        </div>
       </div>
     </div>
     <view-box :view-count="viewCount" />
@@ -34,6 +37,10 @@ export default {
       type: Number,
       required: true,
     },
+    mediumLink: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
@@ -48,13 +55,21 @@ export default {
       object-fit: cover;
       margin-right: 10px;
     }
-
-    span {
-      color: $gray-one;
-      margin-top: 8px;
-    }
-    &__text {
-      margin-left: 10px;
+  }
+  &__text {
+    margin-left: 2px;
+    div {
+      margin-top: 7px;
+      span {
+        color: $gray-one;
+        margin-left: 5px;
+      }
+      a, span {
+        font-size: 14px;
+      }
+      a{
+      text-decoration: underline;
+      }
     }
   }
 }
