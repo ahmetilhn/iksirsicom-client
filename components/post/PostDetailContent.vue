@@ -23,7 +23,10 @@
         <placeholder-image v-else />
       </div>
     </div>
-    <article id="post_detail_content" class="post-detail-content__html"></article>
+    <article
+      id="post_detail_content"
+      class="post-detail-content__html"
+    ></article>
     <hr class="hr-line" />
     <div class="post-detail-content__actions flex--row row--middle--center">
       <post-tags :tags="postDetail.tags" />
@@ -100,6 +103,19 @@ export default {
   }
 
   &__html {
+    a {
+      color: $primary-color;
+    }
+    img {
+      width: 100%;
+    }
+    code {
+      width: 100%;
+      background-color: rgb(240, 240, 240);
+      display: block;
+      padding: 30px;
+      border-radius: 4px;
+    }
     p,
     span {
       display: block;
@@ -110,6 +126,7 @@ export default {
         @include golden-text(18);
       }
     }
+    h1,
     h2,
     h3,
     h4,
@@ -117,6 +134,14 @@ export default {
     h6 {
       font-weight: 500;
       display: block;
+      padding: 20px 0;
+    }
+    h1 {
+      @include golden-text(32);
+
+      @include small-device {
+        @include golden-text(28);
+      }
     }
     h2 {
       @include golden-text(30);
