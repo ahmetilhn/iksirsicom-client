@@ -6,7 +6,7 @@ describe('PostCard.vue', () => {
     props: {
       tags: {
         type: Array,
-        required: true,
+        required: false,
       },
     },
     stubs: {
