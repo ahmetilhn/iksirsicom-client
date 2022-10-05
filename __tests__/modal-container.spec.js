@@ -20,7 +20,7 @@ describe('ModalContainer.vue', () => {
     await wrapper.setProps({
       isVisible: false,
     })
-    const elem = wrapper.find('.modal-container__content')
+    const elem = wrapper.find('#modal_container')
     expect(elem.exists()).toBeFalsy()
   })
 })
