@@ -1,10 +1,12 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
+import Vue from 'vue'
 import InlinePostCard from '~/components/InlinePostCard.vue'
 
 describe('InlinePostCard.vue', () => {
   const wrapper = mount(InlinePostCard, {
     propsData: {
       postDetail: {
+        _id: 1,
         title: 'test title',
         description: 'test description',
       },
@@ -23,7 +25,11 @@ describe('InlinePostCard.vue', () => {
     expect(elem.exists()).toBeTruthy()
     expect(elem.text()).toBe('test description')
   })
-
+  it('link has href', async () => {
+    const link = wrapper.find(RouterLinkStub)
+    await Vue.nextTick()
+    expect(link.props().to).toBe('/post/1')
+  })
   it('doing the emitting', async () => {
     const link = wrapper.find('.inline-post-card > a')
     await link.trigger('click')
