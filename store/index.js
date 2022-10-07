@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import savedItems from './modules/savedItems'
 import common from './modules/common'
 import posts from './modules/posts'
-export const store = () => {
+const store = () => {
   return new Vuex.Store({
     modules: {
       common,
@@ -11,3 +11,5 @@ export const store = () => {
     },
   })
 }
+
+export default store
