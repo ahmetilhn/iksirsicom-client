@@ -12,10 +12,9 @@
   </div>
 </template>
 <script>
-import lockScrollMixin from '~/mixins/lock-scroll.mixin'
+import { lockScroll } from '~/utils/scroll.util'
 export default {
   name: 'ModalContainer',
-  mixins: [lockScrollMixin],
   props: {
     isVisible: {
       type: Boolean,
@@ -24,7 +23,7 @@ export default {
   },
   watch: {
     isVisible(newValue, _) {
-      this.lockScroll(newValue)
+      lockScroll(newValue)
     },
   },
   mounted() {

@@ -10,7 +10,7 @@
   </section>
 </template>
 <script>
-import { goToScroll } from '~/utils/scroll-to.util'
+import { goToScroll } from '~/utils/scroll.util'
 export default {
   name: 'WelcomeArea',
   data() {

@@ -9,10 +9,9 @@
   </transition>
 </template>
 <script>
-import lockScrollMixin from '~/mixins/lock-scroll.mixin'
+import { lockScroll } from '~/utils/scroll.util'
 export default {
   name: 'LoaderOverlay',
-  mixins: [lockScrollMixin],
   computed: {
     appIsReady() {
       return this.$store.state.common.appIsReady
@@ -20,7 +19,7 @@ export default {
   },
   watch: {
     appIsReady() {
-      this.lockScroll(!this.appIsReady)
+      lockScroll(!this.appIsReady)
     },
   },
 }

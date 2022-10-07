@@ -1,22 +1,20 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
-import lockScrollMixin from '~/mixins/lock-scroll.mixin'
+import { lockScroll } from '~/utils/scroll.util'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
-localVue.mixin(lockScrollMixin)
+
+jest.mock('~/utils/scroll.util', () => ({
+  lockScroll: jest.fn(),
+}))
 
 describe('LoaderOverlay.vue', () => {
   const store = {
     state: {
       common: {
-        state: {
-          appIsReady: true,
-        },
-        mutations: {
-          setAppIsReady: jest.fn(),
-        },
+        appIsReady: true,
       },
     },
   }
@@ -34,7 +32,7 @@ describe('LoaderOverlay.vue', () => {
     expect(imgElem.attributes().src).toBe('@/assets/img/logo-animation.svg')
   })
   it('watching appIsReady', () => {
-    store.state.common.state.appIsReady = true
-    expect(wrapper.vm.lockScroll).toHaveBeenCalledTimes(1)
+    store.state.common.appIsReady = true
+    expect(lockScroll).toHaveBeenCalledTimes(1)
   })
 })
