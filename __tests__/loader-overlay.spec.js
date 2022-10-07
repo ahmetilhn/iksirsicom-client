@@ -19,6 +19,10 @@ describe('LoaderOverlay.vue', () => {
       $store: store,
     },
   })
+  it('loader is visible', () => {
+    const loaderWrapper = wrapper.find('.loader-overlay')
+    expect(loaderWrapper.isVisible()).toBeFalsy()
+  })
   it('has img with animation', () => {
     const imgElem = wrapper.find('.loader-overlay > img')
     expect(imgElem.attributes().src).toBe('@/assets/img/logo-animation.svg')
@@ -27,5 +31,8 @@ describe('LoaderOverlay.vue', () => {
     store.state.common.appIsReady = false
     await Vue.nextTick()
     expect(scrollUtil.lockScroll).toHaveBeenCalledTimes(1)
+    const loaderWrapper = wrapper.find('.loader-overlay')
+    await Vue.nextTick()
+    expect(loaderWrapper.isVisible()).toBeTruthy()
   })
 })
