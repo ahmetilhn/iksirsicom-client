@@ -9,15 +9,14 @@
   </transition>
 </template>
 <script>
-import { mapState } from 'vuex'
 import lockScrollMixin from '~/mixins/lock-scroll.mixin'
 export default {
   name: 'LoaderOverlay',
   mixins: [lockScrollMixin],
   computed: {
-    ...mapState({
-      appIsReady: (store) => store.modules.common.appIsReady,
-    }),
+    appIsReady() {
+      return this.$store.state.common.appIsReady
+    },
   },
   watch: {
     appIsReady() {
