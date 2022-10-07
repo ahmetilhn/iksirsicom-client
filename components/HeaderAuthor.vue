@@ -1,9 +1,6 @@
 <template>
   <div class="author">
-    <p>
-      DEV by <strong>Ahmet İlhan</strong> DEVOPS by
-      <strong>Mustafa İlhan</strong>
-    </p>
+    <p>Coded by <strong>Ahmet İlhan</strong></p>
   </div>
 </template>
 <style lang="scss" scoped>
