@@ -1,15 +1,11 @@
-import { mount, createLocalVue } from '@vue/test-utils'
-import Vuex from 'vuex'
+import { mount } from '@vue/test-utils'
+import Vue from 'vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
-import { lockScroll } from '~/utils/scroll.util'
+import * as scrollUtil from '~/utils/scroll.util'
 
-const localVue = createLocalVue()
-localVue.use(Vuex)
-
-jest.mock('~/utils/scroll.util', () => ({
+jest.mock('@/utils/scroll.util', () => ({
   lockScroll: jest.fn(),
 }))
-
 describe('LoaderOverlay.vue', () => {
   const store = {
     state: {
@@ -19,20 +15,17 @@ describe('LoaderOverlay.vue', () => {
     },
   }
   const wrapper = mount(LoaderOverlay, {
-    localVue,
     mocks: {
       $store: store,
-    },
-    methods: {
-      lockScroll: () => jest.fn(),
     },
   })
   it('has img with animation', () => {
     const imgElem = wrapper.find('.loader-overlay > img')
     expect(imgElem.attributes().src).toBe('@/assets/img/logo-animation.svg')
   })
-  it('watching appIsReady', () => {
-    store.state.common.appIsReady = true
-    expect(lockScroll).toHaveBeenCalledTimes(1)
+  it('watching appIsReady', async () => {
+    store.state.common.appIsReady = false
+    await Vue.nextTick()
+    expect(scrollUtil.lockScroll).toHaveBeenCalledTimes(1)
   })
 })
