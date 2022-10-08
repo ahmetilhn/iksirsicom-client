@@ -5,7 +5,6 @@ import LikeBox from '~/components/LikeBox.vue'
 import SaveBox from '~/components/SaveBox.vue'
 import PlaceholderImage from '~/components/PlaceholderImage.vue'
 import savePostMixin from '~/mixins/save-post.mixin'
-import Vue from 'vue'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 localVue.mixin(savePostMixin)
@@ -89,9 +88,15 @@ describe('PostCard.vue', () => {
       'https://notificare.com/static/a0b75984a033fcd6f392050ae391c518/ab5a8/websockets-with-scarlet-cover.png'
     )
   })
-  it('has title link', async () => {
-    const titleElem = wrapper.findComponent(RouterLinkStub)
-    await Vue.nextTick()
-    expect(titleElem.props().to).toBe('post/634163d1ff1b4ef172893e02')
+  it('has title link', () => {
+    const titleElem = wrapper.find('.post-card__body > a > h2')
+    expect(titleElem.exists()).toBeTruthy()
+    expect(titleElem.text()).toBe(
+      'WebSocket, VueJS’te nasıl kullanılır? (Hazır paket kullanmadan)'
+    )
+  })
+  it('tag content is coming', () => {
+    const tagElem = wrapper.findAll('.post-card__tags > a').at(0)
+    expect(tagElem.text()).toBe('websocket')
   })
 })
