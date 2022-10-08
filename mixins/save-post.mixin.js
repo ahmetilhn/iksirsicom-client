@@ -1,4 +1,3 @@
-import { mapState } from 'vuex'
 import { SAVED_POSTS_KEY } from '~/constants/localstorage.constants'
 import { getStorage, setStorage } from '~/utils/localStorage.util'
 export default {
@@ -8,9 +7,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      items: (store) => store.modules.savedItems.items,
-    }),
+    items() {
+      return this.$store.state.modules.savedItems.items
+    },
   },
   methods: {
     setItem(item) {
@@ -29,7 +28,9 @@ export default {
       this.$store.commit('modules/savedItems/setItems', items)
     },
     setIsSaved() {
-      const isItem = this.items?.some((item) => item._id === this.postDetail._id)
+      const isItem = this.items?.some(
+        (item) => item._id === this.postDetail._id
+      )
       this.isSaved = !!isItem
     },
   },
