@@ -46,13 +46,13 @@ describe('PostCard.vue', () => {
           },
           { type: 'h1', text: 'Bir WebSocket kanalına nasıl bağlanılır?' },
         ],
-        reading_time: { $numberInt: '1' },
+        reading_time: 1,
         medium_link:
           'https://safa.medium.com/websocket-vuejste-nas%C4%B1l-kullan%C4%B1l%C4%B1r-haz%C4%B1r-paket-kullanmadan-adc7f29424f2',
         tags: ['websocket', 'javascript', 'web'],
         info: {
-          view: { $numberInt: '27' },
-          like: { $numberInt: '5' },
+          view: 27,
+          like: 5,
           author: {
             full_name: 'Safa Gayret',
             user_name: 'safa_gayret',
@@ -60,7 +60,6 @@ describe('PostCard.vue', () => {
               'https://miro.medium.com/fit/c/176/176/1*0cI-9VyAwPJhkfUO53Hi-Q.jpeg',
           },
         },
-        __v: { $numberInt: '0' },
       },
     },
     store,
