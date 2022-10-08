@@ -14,7 +14,7 @@ export default {
   name: 'LoaderOverlay',
   computed: {
     appIsReady() {
-      return this.$store.state.common.appIsReady
+      return this.$store.state.modules.common.appIsReady
     },
   },
   watch: {

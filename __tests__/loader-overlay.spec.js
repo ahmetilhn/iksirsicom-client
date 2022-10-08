@@ -9,8 +9,10 @@ jest.mock('@/utils/scroll.util', () => ({
 describe('LoaderOverlay.vue', () => {
   const store = {
     state: {
-      common: {
-        appIsReady: true,
+      modules: {
+        common: {
+          appIsReady: true,
+        },
       },
     },
   }
@@ -28,7 +30,7 @@ describe('LoaderOverlay.vue', () => {
     expect(imgElem.attributes().src).toBe('@/assets/img/logo-animation.svg')
   })
   it('watching appIsReady', async () => {
-    store.state.common.appIsReady = false
+    store.state.modules.common.appIsReady = false
     await Vue.nextTick()
     expect(scrollUtil.lockScroll).toHaveBeenCalledTimes(1)
     const loaderWrapper = wrapper.find('.loader-overlay')

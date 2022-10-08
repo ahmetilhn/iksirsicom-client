@@ -3,7 +3,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import LikeBox from '~/components/LikeBox.vue'
 import likeService from '~/services/like.service'
-import store from '~/store'
+import { store } from '~/store'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 // jest.mock('~/services/like.service', () => ({
