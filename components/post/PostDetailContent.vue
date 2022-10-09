@@ -18,8 +18,8 @@
           v-if="postDetail.poster"
           class="flex--column column--middle--center"
         >
-          <img :src="postDetail.poster" alt="" />
-          <figcaption>Photo Title</figcaption>
+          <img :src="postDetail.poster" :alt="postDetail.title" />
+          <figcaption>...</figcaption>
         </figure>
         <placeholder-image v-else />
       </div>
@@ -90,7 +90,10 @@ export default {
     padding: 40px 0;
 
     min-height: 400px;
-
+    @include small-device {
+      min-height: auto;
+      padding: 30px 0;
+    }
     figure {
       width: 100%;
       img {

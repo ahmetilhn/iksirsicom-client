@@ -7,9 +7,9 @@
 .author {
   font-weight: normal;
   font-size: 14px;
+  padding: 8px 0;
   @include small-device {
     font-size: 12px;
-    padding: 8px 0;
   }
 }
 </style>

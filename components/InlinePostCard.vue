@@ -29,11 +29,11 @@ export default {
 <style lang="scss" scoped>
 .inline-post-card {
   width: 100%;
-  padding: 10px 0;
+  padding: 6px 0;
   border-bottom: 1px solid $gray-two;
   &__title {
     @include golden-text(22);
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -44,7 +44,7 @@ export default {
   &__desc {
     @include golden-text(16);
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: $dark-two;
