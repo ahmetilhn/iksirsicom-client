@@ -4,9 +4,9 @@
       <div class="subscribe-modal__body">
         <h6>Bültene üye ol!</h6>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
+          Bu sitede paylaşılan Makaleler, mediumda özel olarak seçilmekte. Bu
+          özenle seçilmiş makalelerden haberdar olmak istiyorsanız bültene üye
+          olun!
         </p>
       </div>
       <div class="subscribe-modal__form flex--row row--middle--center">

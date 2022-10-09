@@ -13,6 +13,16 @@
           :alt="SOCIAL_LINKS.whatsapp.title"
         />
       </a>
+      <a
+        target="BLANK"
+        href="https://github.com/ahmetilhan24/iksirsicom-client"
+        title="Bu proje açık kaynaktır. Gihub repository'sine gitmek için tıkla."
+      >
+        <img
+          src="@/assets/img/social/github.svg"
+          alt="iksirsi.com github repository"
+        />
+      </a>
     </div>
   </footer>
 </template>
