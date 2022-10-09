@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const baseHTTP = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: 'https://iksirsi-api.onrender.com',
   timeout: 8000,
   headers: { 'X-Custom-Header': 'iksirsi-api' },
 })
