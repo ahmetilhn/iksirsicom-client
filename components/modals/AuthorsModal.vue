@@ -4,6 +4,8 @@
       <div class="authors flex--row row--middle--center">
         <author-card />
         <author-card />
+        <author-card />
+        <author-card />
       </div>
     </template>
     <template v-else>
@@ -12,7 +14,6 @@
   </modal-container>
 </template>
 <script lang="js">
-
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
 import NotResult from '../results/NotResult.vue';
@@ -44,6 +45,12 @@ export default {
   flex-wrap: wrap;
   ::v-deep .author-card {
     margin: 10px;
+  }
+  @include small-device {
+    ::v-deep .author-card {
+      margin: 5px;
+      width: calc(50% - 10px);
+    }
   }
 }
 ::v-deep .not-result {

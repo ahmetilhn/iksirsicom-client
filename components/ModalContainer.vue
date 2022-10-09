@@ -49,8 +49,8 @@ export default {
   backdrop-filter: blur(10px);
   left: 0;
   top: 0;
-  z-index: 111111;
-
+  z-index: 1111111111;
+  overflow: hidden;
   @include medium-device {
     padding: 0 $padding-two;
   }
@@ -63,6 +63,7 @@ export default {
     background-color: $white;
     border-radius: 12px;
     padding: 10px;
+    overflow-y: auto;
     @include extra-small-device {
       position: absolute;
       height: 50vh;
