@@ -17,7 +17,7 @@ baseHTTP.interceptors.response.use(
         console.info(res.data)
       }
     }
-    return res
+    return res.data
   },
   (error) => {
     return Promise.reject(error)

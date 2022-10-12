@@ -13,7 +13,7 @@ export default {
     async getAllPosts({ _, commit }, query) {
       const res = await postService.getAllPosts(query)
       if (res) {
-        commit('setPosts', res.data)
+        commit('setPosts', res)
       }
     },
     async getPostById({ _ }, id) {
