@@ -1,6 +1,6 @@
 <template>
   <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
-    <template v-if="true">
+    <template v-if="authors.length">
       <div class="authors flex--row row--middle--center">
         <author-card
           v-for="author in authors"
@@ -10,7 +10,7 @@
       </div>
     </template>
     <template v-else>
-      <not-result v-if="false" />
+      <not-result />
     </template>
   </modal-container>
 </template>
@@ -45,10 +45,12 @@ export default {
         this.$store.commit('modules/common/setAuthorsModalVisible', false)
       },
       async fetchUsers(){
-      const res = await userService.getUsers();
+      if(process.client){
+        const res = await userService.getUsers();
         if(res){
           this.authors = res
         }
+      }
       }
     },
 }

@@ -36,10 +36,10 @@
   </section>
 </template>
 <script>
-import PostDetailInfo from '~/components/PostDetailInfo.vue'
+import PostDetailInfo from '~/components/post/PostDetailInfo.vue'
 import PlaceholderImage from '~/components/PlaceholderImage.vue'
-import LikeBox from '~/components/LikeBox.vue'
-import PostTags from '~/components/PostTags.vue'
+import LikeBox from '~/components/post/LikeBox.vue'
+import PostTags from '~/components/post/PostTags.vue'
 import postContentHtmlMixin from '~/mixins/post-content-html.mixin'
 import { applyHighlight } from '~/plugins/prismjs.plugin'
 import '~/assets/styles/vendor/prismjs.css'

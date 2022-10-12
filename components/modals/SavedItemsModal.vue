@@ -19,7 +19,7 @@
 
 import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
-import InlinePostCard from '../InlinePostCard.vue';
+import InlinePostCard from '../post/InlinePostCard.vue';
 import NotResult from '../results/NotResult.vue';
 export default {
     name: "SavedItemsModal",

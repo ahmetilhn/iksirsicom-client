@@ -15,7 +15,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import PostCard from '../PostCard.vue'
+import PostCard from '../post/PostCard.vue'
 import NotResult from '../results/NotResult.vue'
 export default {
   name: 'VerticalListing',
