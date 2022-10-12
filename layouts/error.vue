@@ -9,7 +9,9 @@
     <p class="error-page__description">
       {{ error.message || 'Bilinmeyen bir hata oluştu' }} 😢
     </p>
-    <button class="home-btn btn-border" @click="$router.push('/')">Ana Sayfa</button>
+    <button class="home-btn btn-border" @click="$router.push('/')">
+      Ana Sayfa
+    </button>
   </div>
 </template>
 
@@ -45,7 +47,7 @@ export default {
       animation: bottomToTop 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19)
         infinite alternate;
       &:nth-of-type(2) {
-        animation-delay: 1.8s;
+        animation-delay: 0.6s;
       }
       &:nth-of-type(3) {
         animation-delay: 2s;
