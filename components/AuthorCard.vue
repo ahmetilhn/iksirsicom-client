@@ -1,24 +1,45 @@
 <template>
   <div class="author-card flex--column column--middle--center">
-    <img
-      class="author-card__avatar"
-      src="https://media-exp1.licdn.com/dms/image/C4D03AQF52Tcii0IDBw/profile-displayphoto-shrink_800_800/0/1645993304620?e=1664409600&v=beta&t=7CCmp4Gk6kfDm6DloqPoYDjB-vX2GQQQ6eMb0Verk7M"
-      alt=""
-    />
-    <p><strong>Ahmet ilhan</strong></p>
+    <div
+      v-if="author.avatar"
+      class="flex--row row--middle--center author-card__avatar"
+    >
+      <img :src="author.avatar" alt="" />
+    </div>
+    <div
+      class="flex--row row--middle--center author-card__avatar author-card__avatar--not-avatar"
+      v-else
+    >
+      <img src="@/assets/img/logo.svg" alt="" />
+    </div>
+    <p>
+      <strong>{{ author.full_name }}</strong>
+    </p>
     <div class="author-card__links flex--row row--middle--center">
-      <a href="" target="BLANK">
+      <a :href="author.github_url" target="BLANK">
         <img src="@/assets/img/social/github.svg" alt="" />
       </a>
-      <a href="" target="BLANK">
+      <a :href="author.linkedin_url" target="BLANK">
         <img src="@/assets/img/social/linkedin.svg" alt="" />
       </a>
-      <a href="" target="BLANK">
+      <a :href="author.medium_url" target="BLANK">
         <img src="@/assets/img/social/medium.svg" alt="" />
       </a>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'AuthorCard',
+  props: {
+    author: {
+      type: Object,
+      default: () => {},
+      required: true,
+    },
+  },
+}
+</script>
 <style lang="scss" scoped>
 .author-card {
   border: 2px solid $dark-one;
@@ -30,7 +51,22 @@
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 3px solid $dark-one;
+    border: 3px solid $white;
+    background-color: $white;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &--not-avatar {
+      img {
+        width: 70%;
+        height: 70%;
+        filter: grayscale(1);
+        object-fit: contain;
+      }
+    }
   }
   &__links {
     margin-top: 10px;

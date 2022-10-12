@@ -2,12 +2,25 @@ import { mount } from '@vue/test-utils'
 import AuthorCard from '~/components/AuthorCard.vue'
 
 describe('AuthorCard.vue', () => {
-  const wrapper = mount(AuthorCard)
+  const wrapper = mount(AuthorCard, {
+    propsData: {
+      author: {
+        email: 'ahmetilhan.dev@gmail.com',
+        full_name: 'Ahmet ilhan',
+        user_name: 'ahmetilhan24',
+        avatar: 'https://avatars.githubusercontent.com/u/60369989?v=4',
+        medium_url: '',
+        github_url: '',
+        linkedin_url: '',
+        _id: '6347323dd5869b7ec39ad2cd',
+      },
+    },
+  })
   it('has an avatar ', () => {
-    const elem = wrapper.find('.author-card__avatar')
+    const elem = wrapper.find('.author-card__avatar > img')
     expect(elem.exists()).toBeTruthy()
     expect(elem.attributes().src).toBe(
-      'https://media-exp1.licdn.com/dms/image/C4D03AQF52Tcii0IDBw/profile-displayphoto-shrink_800_800/0/1645993304620?e=1664409600&v=beta&t=7CCmp4Gk6kfDm6DloqPoYDjB-vX2GQQQ6eMb0Verk7M'
+      'https://avatars.githubusercontent.com/u/60369989?v=4'
     )
   })
   it('Has 3 social links', () => {
