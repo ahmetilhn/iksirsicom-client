@@ -1,6 +1,6 @@
 <template>
   <div class="post flex--row row--middle--center">
-    <post-detail-content :post-detail="data" />
+    <post-detail-content :post-detail="postDetail" />
   </div>
 </template>
 <script>
@@ -10,17 +10,17 @@ export default {
   name: 'PostDetail',
   components: { PostDetailContent },
   layout: 'DefaultLayout',
-  async asyncData({ store, params }) {
+  async asyncData({ app, store, params }) {
     store.commit('modules/common/setAppIsReady', false)
-    const { data } = await store.dispatch(
+    const postDetail = await store.dispatch(
       'modules/posts/getPostById',
       params.id
     )
-    if (data) {
-      viewService.createView(params.id)
+    if (postDetail) {
+      await viewService.createView(params.id)
       store.commit('modules/common/setAppIsReady', true)
       return {
-        data,
+        postDetail,
       }
     }
   },
