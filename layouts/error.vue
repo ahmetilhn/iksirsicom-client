@@ -62,9 +62,6 @@ export default {
   &__description {
     @include golden-text(18);
     margin: 40px 0;
-    span {
-      opacity: 0.5;
-    }
   }
 }
 </style>
