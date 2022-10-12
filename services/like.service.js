@@ -1,7 +1,7 @@
-import baseHTTP from './base.service'
+import baseService from './base.service'
 
 const createLike = async (postId) => {
-  const res = await baseHTTP.post('/likes', {
+  const res = await baseService.post('/likes', {
     post_id: postId,
   })
   if (res) return res

@@ -1,9 +1,3 @@
-import axios from 'axios'
-
-const baseHTTP = axios.create({
-  baseURL: 'https://iksirsi-api.onrender.com',
-  timeout: 8000,
-  headers: { 'X-Custom-Header': 'iksirsi-api' },
-})
-
-export default baseHTTP
+import baseHTTP from '~/config/axios.config'
+const baseService = baseHTTP
+export default baseService

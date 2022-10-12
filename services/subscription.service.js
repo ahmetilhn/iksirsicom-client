@@ -1,7 +1,7 @@
-import baseHTTP from './base.service'
+import baseService from './base.service'
 
 const createSubscription = async (email) => {
-  const res = await baseHTTP.post('/subscriptions', {
+  const res = await baseService.post('/subscriptions', {
     email,
   })
   if (res) return res
