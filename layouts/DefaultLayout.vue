@@ -6,13 +6,16 @@
       <Nuxt />
     </main>
     <app-footer />
-    <subscribe-modal />
-    <saved-items-modal />
-    <authors-modal />
+    <div>
+      <subscribe-modal v-if="isSubscriptionModalVisible" />
+      <saved-items-modal v-if="isSavedItemsModalVisible" />
+      <authors-modal v-if="isAuthorsModalVisible" />
+    </div>
     <loader-overlay />
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
@@ -30,6 +33,16 @@ export default {
     SavedItemsModal,
     LoaderOverlay,
     AuthorsModal,
+  },
+  computed: {
+    ...mapState({
+      isAuthorsModalVisible: (store) =>
+        store.modules.common.authorsModalIsVisible,
+      isSavedItemsModalVisible: (store) =>
+        store.modules.common.savedItemsModalIsVisible,
+      isSubscriptionModalVisible: (store) =>
+        store.modules.common.subscriptionModalIsVisible,
+    }),
   },
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="isVisible"
     id="modal_container"
     class="modal-container flex--row row--middle--center"
   >
@@ -21,12 +20,11 @@ export default {
       default: false,
     },
   },
-  watch: {
-    isVisible(newValue, _) {
-      lockScroll(newValue)
-    },
+  destroyed() {
+    lockScroll(false)
   },
   mounted() {
+    lockScroll(true)
     this.clickOutsideHandler()
   },
   methods: {
@@ -34,7 +32,9 @@ export default {
       const _t = this
       window.addEventListener('click', function (e) {
         if (e.target.id === 'modal_container') {
-          _t.$emit('click-outside')
+          setTimeout(() => {
+            _t.$emit('click-outside')
+          }, 100)
         }
       })
     },
