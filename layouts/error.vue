@@ -7,8 +7,7 @@
       </span>
     </h1>
     <p class="error-page__description">
-      {{ statusCodeDescription || 'Bilinmeyen bir hata oluştu' }} 😢
-      <span><strong>src:</strong> {{ error.message }}</span>
+      {{ statusCodeDescription }}<strong> src: {{ error.message }}</strong>
     </p>
     <button class="home-btn btn-border" @click="$router.push('/')">
       Ana Sayfa
@@ -30,7 +29,8 @@ export default {
       return String(this.error?.statusCode).split('')
     },
     statusCodeDescription() {
-      return errorResultConstants[this.error?.statusCode]?.desc
+      const desc = errorResultConstants[this.error?.statusCode]?.desc
+      return desc || 'Bilinmeyen bir hata oluştu'
     },
   },
 }

@@ -26,7 +26,7 @@ describe('error.vue', () => {
   it('has description', () => {
     const descElem = wrapper.find('.error-page__description')
     expect(descElem.text()).toBe(
-      "Cannot read property 'nonexistentThing' of undefined 😢"
+      "Sunucu hatası src: Cannot read property 'nonexistentThing' of undefined"
     )
   })
   it('go to homepage is working', () => {
