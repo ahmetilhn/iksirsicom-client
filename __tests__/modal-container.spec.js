@@ -21,6 +21,6 @@ describe('ModalContainer.vue', () => {
       isVisible: false,
     })
     const elem = wrapper.find('#modal_container')
-    expect(elem.exists()).toBeFalsy()
+    expect(elem.exists()).toBeTruthy()
   })
 })
