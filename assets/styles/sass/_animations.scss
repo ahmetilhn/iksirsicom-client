@@ -8,3 +8,9 @@
 .v-leave-to {
   opacity: 0;
 }
+
+@keyframes bottomToTop {
+  to {
+    transform: translateY(-20px);
+  }
+}
