@@ -9,7 +9,7 @@
     <p class="error-page__description">
       {{ error.message || 'Bilinmeyen bir hata oluştu' }} 😢
     </p>
-    <button class="btn-border" @click="$router.push('/')">Ana Sayfa</button>
+    <button class="home-btn btn-border" @click="$router.push('/')">Ana Sayfa</button>
   </div>
 </template>
 
