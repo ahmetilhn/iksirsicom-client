@@ -2,10 +2,11 @@
   <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
     <template v-if="true">
       <div class="authors flex--row row--middle--center">
-        <author-card />
-        <author-card />
-        <author-card />
-        <author-card />
+        <author-card
+          v-for="author in authors"
+          :key="author._id"
+          :author="author"
+        />
       </div>
     </template>
     <template v-else>
@@ -18,23 +19,38 @@ import { mapState } from 'vuex';
 import ModalContainer from '../ModalContainer.vue'
 import NotResult from '../results/NotResult.vue';
 import AuthorCard from '../AuthorCard.vue';
+import userService from '~/services/user.service';
 export default {
     name: "AuthorsModal",
     components: {
     ModalContainer,
     NotResult,
     AuthorCard
-},
+    },
+    data(){
+      return{
+        authors: []
+      }
+    },
     computed: {
         ...mapState({
             isVisible: store => store.modules.common.authorsModalIsVisible,
         })
     },
+    mounted(){
+      this.fetchUsers();
+    },
     methods: {
       clickOutsideHandler(){
         this.$store.commit('modules/common/setAuthorsModalVisible', false)
       },
-    }
+      async fetchUsers(){
+      const res = await userService.getUsers();
+        if(res){
+          this.authors = res
+        }
+      }
+    },
 }
 </script>
 <style lang="scss" scoped>
