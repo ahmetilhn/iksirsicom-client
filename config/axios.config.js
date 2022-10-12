@@ -1,7 +1,10 @@
 import axios from 'axios'
-
+const baseUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:8000'
+    : 'https://iksirsi-api.onrender.com'
 const baseHTTP = axios.create({
-  baseURL: 'https://iksirsi-api.onrender.com',
+  baseURL: baseUrl,
   timeout: 8000,
   headers: { 'X-Custom-Header': 'iksirsi-api' },
 })
