@@ -27,7 +27,7 @@
   </footer>
 </template>
 <script>
-import { SOCIAL_LINKS } from '~/constants/social-links.constants'
+import { SOCIAL_LINKS } from '~/constants/social-link.constants'
 export default {
   name: 'AppFooter',
   data() {

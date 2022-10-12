@@ -7,7 +7,8 @@
       </span>
     </h1>
     <p class="error-page__description">
-      {{ error.message || 'Bilinmeyen bir hata oluştu' }} 😢
+      {{ statusCodeDescription || 'Bilinmeyen bir hata oluştu' }} 😢
+      <span><strong>src:</strong> {{ error.message }}</span>
     </p>
     <button class="home-btn btn-border" @click="$router.push('/')">
       Ana Sayfa
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import errorResultConstants from '~/constants/error-result.constants'
 export default {
   props: {
     error: {
@@ -26,6 +28,9 @@ export default {
   computed: {
     statusCodeCharacters() {
       return String(this.error?.statusCode).split('')
+    },
+    statusCodeDescription() {
+      return errorResultConstants[this.error?.statusCode]?.desc
     },
   },
 }
@@ -57,6 +62,9 @@ export default {
   &__description {
     @include golden-text(18);
     margin: 40px 0;
+    span {
+      opacity: 0.5;
+    }
   }
 }
 </style>
