@@ -1,7 +1,7 @@
 <template>
   <modal-container :is-visible="isVisible" @click-outside="clickOutsideHandler">
-    <div class="subscribe-modal flex--column column--middle--center">
-      <div class="subscribe-modal__body">
+    <div class="subscription-modal flex--column column--middle--center">
+      <div class="subscription-modal__body">
         <h6>Bültene üye ol!</h6>
         <p>
           Bu sitede paylaşılan Makaleler, mediumda özel olarak seçilmekte. Bu
@@ -9,7 +9,7 @@
           olun!
         </p>
       </div>
-      <div class="subscribe-modal__form flex--row row--middle--center">
+      <div class="subscription-modal__form flex--row row--middle--center">
         <input
           class="input border-effect"
           v-model="email"
@@ -34,7 +34,7 @@ import ModalContainer from '../ModalContainer.vue'
 import subscriptionService from '~/services/subscription.service';
 import { EMAIL_REGEX } from "~/constants/regex.constants"
 export default {
-    name: "SubscribeModal",
+    name: "subscriptionModal",
     components: {
         ModalContainer
     },
@@ -69,7 +69,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.subscribe-modal {
+.subscription-modal {
   width: 100%;
   height: 280px;
   @include extra-small-device {

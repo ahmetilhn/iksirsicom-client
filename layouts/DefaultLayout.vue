@@ -7,7 +7,7 @@
     </main>
     <app-footer />
     <div>
-      <subscribe-modal v-if="isSubscriptionModalVisible" />
+      <subscription-modal v-if="isSubscriptionModalVisible" />
       <saved-items-modal v-if="isSavedItemsModalVisible" />
       <authors-modal v-if="isAuthorsModalVisible" />
     </div>
@@ -19,7 +19,7 @@ import { mapState } from 'vuex'
 import AppHeader from './partials/AppHeader.vue'
 import AppFooter from './partials/AppFooter.vue'
 import AppSmallHeader from './partials/AppSmallHeader.vue'
-import SubscribeModal from '~/components/modals/SubscribeModal.vue'
+import SubscriptionModal from '~/components/modals/SubscriptionModal.vue'
 import SavedItemsModal from '~/components/modals/SavedItemsModal.vue'
 import AuthorsModal from '~/components/modals/AuthorsModal.vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
@@ -29,7 +29,7 @@ export default {
     AppHeader,
     AppFooter,
     AppSmallHeader,
-    SubscribeModal,
+    SubscriptionModal,
     SavedItemsModal,
     LoaderOverlay,
     AuthorsModal,
