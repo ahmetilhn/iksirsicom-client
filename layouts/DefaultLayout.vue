@@ -24,6 +24,7 @@ import SavedItemsModal from '~/components/modals/SavedItemsModal.vue'
 import AuthorsModal from '~/components/modals/AuthorsModal.vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
 import { setSurvey } from '~/plugins/survicate.plugin'
+import { setGA } from '~/plugins/gtm.plugin'
 export default {
   name: 'DefaultLayout',
   components: {
@@ -47,6 +48,7 @@ export default {
   },
   mounted() {
     setSurvey()
+    setGA()
   },
 }
 </script>
