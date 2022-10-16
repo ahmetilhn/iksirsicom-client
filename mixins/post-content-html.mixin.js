@@ -18,7 +18,7 @@ export default {
               break
             case 'code':
               htmlElem.classList.add('language-javascript')
-              htmlElem.innerHTML = elem.text
+              htmlElem.innerHTML = elem.text.replace(/<br\/>/g, '\n')
               preElem.appendChild(htmlElem)
               htmlElem = preElem
               break
