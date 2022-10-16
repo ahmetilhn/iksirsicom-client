@@ -17,7 +17,7 @@ export default {
               htmlElem.src = elem.img_source
               break
             case 'code':
-              htmlElem.classList.add('language-javascript')
+              htmlElem.classList.add(`language-${elem.lang}`)
               htmlElem.innerHTML = elem.text.replace(/<br\/>/g, '\n')
               preElem.appendChild(htmlElem)
               htmlElem = preElem
