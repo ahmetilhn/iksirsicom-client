@@ -1,8 +1,8 @@
 export default {
   methods: {
     createHtmlElements(elems) {
-      const inclusiveElem = document.getElementById('post_detail_content')
       if (process.client) {
+        const inclusiveElem = document.getElementById('post_detail_content')
         elems.forEach((elem) => {
           const tagName = elem.type
           let htmlElem = document.createElement(tagName)

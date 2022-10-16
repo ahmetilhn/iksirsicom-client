@@ -53,8 +53,10 @@ export default {
       required: true,
     },
   },
-  mounted() {
+  created() {
     this.createHtmlElements(this.postDetail.content)
+  },
+  mounted() {
     applyHighlight()
   },
 }
