@@ -25,6 +25,7 @@ export default {
               break
             case 'code':
               htmlElem.classList.add(`language-${elem.lang}`)
+              console.log(elem.text.replace(/<br\/>/g, '\n'))
               htmlElem.innerText = elem.text.replace(/<br\/>/g, '\n')
               preElem.appendChild(htmlElem)
               htmlElem = preElem

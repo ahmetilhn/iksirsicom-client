@@ -41,6 +41,8 @@ import PlaceholderImage from '~/components/PlaceholderImage.vue'
 import LikeBox from '~/components/post/LikeBox.vue'
 import PostTags from '~/components/post/PostTags.vue'
 import postContentHtmlMixin from '~/mixins/post-content-html.mixin'
+import '~/assets/styles/vendor/prism.css'
+import { applyHighlight } from '~/plugins/prism.plugin'
 export default {
   name: 'PostDetailContent',
   components: { PostDetailInfo, PlaceholderImage, LikeBox, PostTags },
@@ -53,6 +55,7 @@ export default {
   },
   mounted() {
     this.createHtmlElements(this.postDetail.content)
+    applyHighlight()
   },
 }
 </script>
@@ -129,6 +132,14 @@ export default {
     pre {
       margin-bottom: $commonMargin;
       background-color: $dark-one;
+      border-radius: 10px;
+      padding: 20px;
+      code {
+        @include golden-text(15);
+        font-weight: normal;
+        letter-spacing: 1px;
+        color: white;
+      }
     }
     h1,
     h2,
