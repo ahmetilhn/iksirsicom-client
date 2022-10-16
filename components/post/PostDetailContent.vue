@@ -53,10 +53,8 @@ export default {
       required: true,
     },
   },
-  created() {
-    this.createHtmlElements(this.postDetail.content)
-  },
   mounted() {
+    this.createHtmlElements(this.postDetail.content)
     applyHighlight()
   },
 }
@@ -118,10 +116,11 @@ export default {
       margin-bottom: $commonMargin;
     }
     a {
-      color: $primary-color;
+      color: $dark-two;
     }
     p,
-    span.no-code {
+    span.no-code,
+    a {
       display: block;
       margin-bottom: $commonMargin;
       @include golden-text(18);
