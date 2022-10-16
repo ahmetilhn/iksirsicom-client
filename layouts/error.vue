@@ -7,7 +7,7 @@
       </span>
     </h1>
     <p class="error-page__description">
-      {{ statusCodeDescription }}<strong> src: {{ error.message }}</strong>
+      {{ statusCodeDescription }}<strong> : {{ error.message }}</strong>
     </p>
     <button class="home-btn btn-border" @click="$router.push('/')">
       Ana Sayfa
