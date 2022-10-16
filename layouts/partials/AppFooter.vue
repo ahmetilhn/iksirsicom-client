@@ -48,7 +48,7 @@ export default {
 <style lang="scss" scoped>
 .app-footer {
   width: 100vw;
-  background-color: $primary-color;
+  background-color: $gray-one;
   min-height: 200px;
   border-top: 2px solid $dark-one;
 

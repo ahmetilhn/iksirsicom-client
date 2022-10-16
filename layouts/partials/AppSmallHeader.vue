@@ -16,7 +16,7 @@ export default {
 .app-small-header {
   width: 100%;
   border-bottom: 2px solid $dark-one;
-  background-color: $primary-color;
+  background-color: $gray-one;
   color: $dark-one;
   position: sticky;
   top: 0;

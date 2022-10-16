@@ -52,6 +52,7 @@ export default {
       width: 46px;
       height: 46px;
       border-radius: 50%;
+      border: 2px solid $gray-one;
       object-fit: cover;
       margin-right: 10px;
     }

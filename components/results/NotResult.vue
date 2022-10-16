@@ -17,6 +17,7 @@ export default {
     width: 40px;
     height: 40px;
     margin-bottom: 20px;
+    filter: grayscale(1);
   }
 }
 </style>

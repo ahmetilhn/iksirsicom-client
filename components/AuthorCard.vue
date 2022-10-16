@@ -45,18 +45,18 @@ export default {
   border: 2px solid $dark-one;
   padding: 15px;
   border-radius: 5px;
-  background-color: $primary-color;
+  background-color: $gray-one;
   &__avatar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 3px solid $white;
+    border: 3px solid $dark-two;
     background-color: $white;
     overflow: hidden;
     img {
-      width: 100%;
-      height: 100%;
+      width: 110%;
+      height: 110%;
       object-fit: cover;
     }
     &--not-avatar {
