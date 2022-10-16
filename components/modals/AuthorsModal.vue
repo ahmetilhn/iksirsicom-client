@@ -10,7 +10,7 @@
       </div>
     </template>
     <template v-else>
-      <not-result />
+      <not-result description="Henüz bir yazar yok :(" />
     </template>
   </modal-container>
 </template>

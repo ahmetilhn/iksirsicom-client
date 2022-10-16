@@ -11,7 +11,7 @@
       </div>
     </template>
     <template v-else>
-      <not-result />
+      <not-result description="Henüz bir makale kaydetmediniz" />
     </template>
   </modal-container>
 </template>
