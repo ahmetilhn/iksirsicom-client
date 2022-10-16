@@ -9,7 +9,7 @@ export const setGA = () => {
       window.dataLayer.push(arguments)
     }
     // Close for development
-    if (process.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       gtag('js', new Date())
       gtag('config', 'G-RQ8L9194JL')
     }
