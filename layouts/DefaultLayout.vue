@@ -23,6 +23,7 @@ import SubscriptionModal from '~/components/modals/SubscriptionModal.vue'
 import SavedItemsModal from '~/components/modals/SavedItemsModal.vue'
 import AuthorsModal from '~/components/modals/AuthorsModal.vue'
 import LoaderOverlay from '~/components/LoaderOverlay.vue'
+import { setSurvey } from '~/plugins/survicate.plugin'
 export default {
   name: 'DefaultLayout',
   components: {
@@ -43,6 +44,9 @@ export default {
       isSubscriptionModalVisible: (store) =>
         store.modules.common.subscriptionModalIsVisible,
     }),
+  },
+  mounted() {
+    setSurvey()
   },
 }
 </script>
