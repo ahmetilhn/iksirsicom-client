@@ -17,6 +17,7 @@
 
 <script>
 import errorResultConstants from '~/constants/error-result.constants'
+import { lockScroll } from '~/utils/scroll.util'
 export default {
   props: {
     error: {
@@ -32,6 +33,9 @@ export default {
       const desc = errorResultConstants[this.error?.statusCode]?.desc
       return desc || 'Bilinmeyen bir hata oluştu'
     },
+  },
+  destroyed() {
+    lockScroll(false)
   },
 }
 </script>
