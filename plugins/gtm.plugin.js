@@ -8,7 +8,10 @@ export const setGA = () => {
     function gtag() {
       window.dataLayer.push(arguments)
     }
-    gtag('js', new Date())
-    gtag('config', 'G-RQ8L9194JL')
+    // Close for development
+    if (process.NODE_ENV === 'production') {
+      gtag('js', new Date())
+      gtag('config', 'G-RQ8L9194JL')
+    }
   }
 }
