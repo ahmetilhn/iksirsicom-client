@@ -5,7 +5,7 @@ const baseUrl =
     : 'https://iksirsi-api.onrender.com'
 const baseHTTP = axios.create({
   baseURL: baseUrl,
-  timeout: 8000,
+  timeout: 30000,
   headers: { 'X-Custom-Header': 'iksirsi-api' },
 })
 baseHTTP.interceptors.response.use(
