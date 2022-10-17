@@ -20,7 +20,17 @@
       >
         <img
           src="@/assets/img/social/github.svg"
-          alt="iksirsi.com github repository"
+          alt="iksirsi.com Github Repository"
+        />
+      </a>
+      <a
+        target="BLANK"
+        href="https://github.com/sponsors/ahmetilhan24"
+        title="Destek Ol"
+      >
+        <img
+          src="@/assets/img/icons/heart.svg"
+          alt="iksirsi.com'a Destek ol"
         />
       </a>
     </div>

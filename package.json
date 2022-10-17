@@ -1,7 +1,7 @@
 {
   "name": "iksirsicom-client",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "scripts": {
     "dev": "NODE_ENV=development nuxt",
     "build": "nuxt build",

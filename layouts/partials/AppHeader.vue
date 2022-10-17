@@ -5,14 +5,22 @@
         <img src="@/assets/img/logo.svg" alt="iksirsi Logo" />
       </nuxt-link>
       <div class="app-header__buttons flex--row row--middle--center">
-        <button class="btn-border" @click="openSavedList">Listem</button>
+        <button class="btn-border" @click="openSavedList">
+          Listem ({{ savedItems.length }})
+        </button>
       </div>
     </div>
   </header>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'AppHeader',
+  computed: {
+    ...mapState({
+      savedItems: (store) => store.modules?.savedItems?.items,
+    }),
+  },
   methods: {
     openSavedList() {
       this.$store.commit('modules/common/setSavedItemsModalVisible', true)

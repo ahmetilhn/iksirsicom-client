@@ -1,12 +1,14 @@
 <template>
   <section class="welcome-area flex--column column--middle--center">
     <img src="@/assets/img/logo.svg" alt="İksirsi logo" />
-    <h2>Yazılım ve Teknoloji ile ilgili blogları okumaya hazır mısın?</h2>
+    <h2>Yazılım ve Teknoloji ile ilgili en iyi Kaynakları mı Arıyorsun?</h2>
     <p>
       İyi bir kariyer için, doğru bir başlangıç gerekir. İksirsi'de bir çok dil
       ve teknolojiye ait makaleleri okuyarak yazılım bilgini artırabilirsin.
     </p>
-    <button class="btn-border" @click="goToScroll(300, '.vertical-listing')">Hemen Başla</button>
+    <button class="btn-border" @click="goToScroll(300, '.vertical-listing')">
+      Hemen Başla
+    </button>
   </section>
 </template>
 <script>

@@ -5,7 +5,7 @@
         <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
       </div>
       <div class="vertical-listing__bottom flex--row row--middle--center">
-        <button class="btn-border" @click="getData">Daha fazla gör</button>
+        <button class="btn-border" @click="getData">Daha Fazla Gör</button>
       </div>
     </template>
     <template v-else>
