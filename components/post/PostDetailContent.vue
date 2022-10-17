@@ -121,7 +121,7 @@ export default {
     p,
     span.no-code,
     a {
-      display: block;
+      display: inline-block;
       margin-bottom: $commonMargin;
       @include golden-text(18);
 
