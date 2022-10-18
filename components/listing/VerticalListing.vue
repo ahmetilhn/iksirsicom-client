@@ -1,8 +1,12 @@
 <template>
   <div class="vertical-listing flex--row row--middle--center">
-    <template v-if="posts.length">
+    <template v-if="getPosts.length">
       <div class="vertical-listing__items flex--row row--middle--left">
-        <post-card :post-detail="post" v-for="post in posts" :key="post._id" />
+        <post-card
+          v-for="post in getPosts"
+          :key="post._id"
+          :post-detail="post"
+        />
       </div>
       <div class="vertical-listing__bottom flex--row row--middle--center">
         <button class="btn-border" @click="getData">Daha Fazla Gör</button>
@@ -14,7 +18,6 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
 import PostCard from '../post/PostCard.vue'
 import NotResult from '../results/NotResult.vue'
 export default {
@@ -26,9 +29,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      posts: (store) => store.modules.posts.posts,
-    }),
+    getPosts() {
+      return this.$store.state.modules.posts.posts
+    },
   },
   methods: {
     async getData() {
