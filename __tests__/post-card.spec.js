@@ -1,8 +1,8 @@
 import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import Vuex from 'vuex'
-import PostCard from '~/components/PostCard.vue'
-import LikeBox from '~/components/LikeBox.vue'
-import SaveBox from '~/components/SaveBox.vue'
+import PostCard from '~/components/post/PostCard.vue'
+import LikeBox from '~/components/post/LikeBox.vue'
+import SaveBox from '~/components/post/SaveBox.vue'
 import PlaceholderImage from '~/components/PlaceholderImage.vue'
 import savePostMixin from '~/mixins/save-post.mixin'
 const localVue = createLocalVue()
