@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import SaveBox from '~/components/SaveBox.vue'
+import SaveBox from '~/components/post/SaveBox.vue'
 
 describe('SaveBox.vue', () => {
   const wrapper = shallowMount(SaveBox, {
