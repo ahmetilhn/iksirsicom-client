@@ -1,14 +1,8 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Vue from 'vue'
-import Vuex from 'vuex'
 import LikeBox from '~/components/post/LikeBox.vue'
 import likeService from '~/services/like.service'
-import { store } from '~/store'
-const localVue = createLocalVue()
-localVue.use(Vuex)
-// jest.mock('~/services/like.service', () => ({
-//   createLike: () => jest.fn().mockResolvedValue('test response'),
-// }))
+
 jest.spyOn(likeService, 'createLike').mockResolvedValue('test value')
 describe('LikeBox.vue', () => {
   const wrapper = mount(LikeBox, {
@@ -16,8 +10,11 @@ describe('LikeBox.vue', () => {
       likeCount: 2,
       postId: '12',
     },
-    store,
-    localVue,
+    mocks: {
+      $store: {
+        commit: jest.fn(),
+      },
+    },
   })
   it('has not like class', () => {
     const likeIcon = wrapper.find('.like-box > svg')
