@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import PostDetailInfo from '~/components/PostDetailInfo.vue'
-import ViewBox from '~/components/ViewBox.vue'
+import PostDetailInfo from '~/components/post/PostDetailInfo.vue'
+import ViewBox from '~/components/post/ViewBox.vue'
 describe('PostDetailInfo.vue', () => {
   const wrapper = mount(PostDetailInfo, {
     propsData: {
