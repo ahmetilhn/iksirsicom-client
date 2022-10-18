@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import Vue from 'vue'
-import InlinePostCard from '~/components/InlinePostCard.vue'
+import InlinePostCard from '~/components/post/InlinePostCard.vue'
 
 describe('InlinePostCard.vue', () => {
   const wrapper = mount(InlinePostCard, {
