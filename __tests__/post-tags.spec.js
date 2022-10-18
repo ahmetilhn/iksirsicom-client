@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import PostTags from '~/components/PostTags.vue'
+import PostTags from '~/components/post/PostTags.vue'
 
 describe('PostCard.vue', () => {
   const wrapper = mount(PostTags, {
