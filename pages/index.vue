@@ -8,6 +8,7 @@
 <script>
 import WelcomeArea from '@/components/home/WelcomeArea.vue'
 import VerticalListing from '@/components/listing/VerticalListing.vue'
+
 export default {
   name: 'IndexPage',
   components: {
@@ -17,8 +18,14 @@ export default {
   layout: 'DefaultLayout',
   async asyncData({ store }) {
     store.commit('modules/common/setAppIsReady', false)
-    await store.dispatch('modules/posts/getAllPosts', {limit: 3})
+    await store.dispatch('modules/posts/getAllPosts', { limit: 3 })
     store.commit('modules/common/setAppIsReady', true)
+  },
+  mounted() {
+    this.$snowFall.makeItRain()
+  },
+  destroyed() {
+    this.$snowFall.stopTheRain()
   },
 }
 </script>
